@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg xmlns="http://www.w3.org/2000/svg">
+
+  <!-- left top shapes 1 -->
+  <symbol id="shapes1" viewBox="0 0 100 100" >
+    <polygon id="e1_polygon" points="0 0, 0 100, 100 0"/>
+    <!-- fill="#f47e08" -->
+  </symbol>
+
+  <symbol id="shapes1a" viewBox="0 0 100 100">
+    <polygon id="e1_polygon" points="0 0, 0 100, 100 0" fill="#c9c9c9"/>
+  </symbol>
+
+  <!-- left top shapes 2 -->
+  <symbol id="shapes2" viewBox="0 0 100 100">
+    <polygon id="e1_polygon" points="0 0, 0 100, 100 0" fill="#eaeaea"/>
+  </symbol>
+
+  <symbol id="shapes2a" viewBox="0 0 100 100">
+    <polygon id="e1_polygon" points="0 0, 0 100, 100 0" fill="#192353"/>
+  </symbol>
+
+  <!-- left top shapes 3 -->
+  <symbol id="shapes3" viewBox="0 0 100 100">
+    <polygon id="e1_polygon" points="0 0, 0 100, 100 0"/>
+  </symbol>
+
+  <!-- left top shapes 3a -->
+  <symbol id="shapes3a" viewBox="0 0 100 100">
+    <polygon id="e1_polygon" points="0 0, 0 100, 100 0" fill="url(#dots-5)"/>
+  </symbol>
+
+</svg>
+
+
+
+  
