@@ -47835,12 +47835,12 @@ nav.menu-hamburger .menu-wraper .menu-column.menucart-wrap .menu-column {
   animation-duration: 1s;
 }
 
-@media (min-width: 1200px) {
+/* @media (min-width: 1200px) {
   .home .formbox .pnl-body:before,
   .formbox-polyround .pnl-body:before {
     display: inline-block;
   }
-}
+} */
 
 .home .formbox .pnl-body form,
 .formbox-polyround .pnl-body form {
@@ -58593,7 +58593,7 @@ body.hotelbooking footer .bottom-right .shapes3 {
 
 .hotelndeal {
   padding-top: 40px;
-  background-color: #ebebeb;
+  background-color: #ffffff  /* #ebebeb; */
   position: relative;
 }
 
