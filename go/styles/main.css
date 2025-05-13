@@ -16651,6 +16651,40 @@ input[type=range]::-ms-thumb {
   content: "";
 }
 
+.ft-instagram {
+  display: inline-block;
+  text-decoration: none;
+  width: 24px;
+  height: 24px;
+}
+
+.instagram-icon {
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+/* Change color on hover */
+.ft-instagram:hover .instagram-icon {
+  fill: #e4405f; /* Instagram's brand color */
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Optional: Adjust size of the icon for larger versions */
+.ft-instagram.large .instagram-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.ft-instagram.medium .instagram-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.ft-instagram.small .instagram-icon {
+  width: 20px;
+  height: 20px;
+}
 .gt-shape:before {
   content: "";
 }
@@ -47287,7 +47321,7 @@ nav.menu-hamburger .menu-wraper .menu-column.menucart-wrap .menu-column {
 
 .home > footer .ftr-main-sec .social .connect-with-us .social-links li a,
 .innerwrapper > footer .ftr-main-sec .social .connect-with-us .social-links li a {
-  background-color: #eee;
+  /* background-color: #eee; */
   border-radius: 50%;
   font-size: 20px;
   padding: 3px;
