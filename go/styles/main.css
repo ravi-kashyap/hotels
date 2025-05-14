@@ -37486,11 +37486,11 @@ a.bx--navigation-link:focus {
 
 .btn-info {
   display: inline-block;
-  border-radius: 3px;
-  font-size: 14px;
+  border-radius: 0px;
+  font-size: 16px;
   color: #fff;
   background-color: #61a8ee;
-  padding: 5px 10px;
+  padding: 13px 16px;
 }
 
 .btn-deal {
@@ -43472,25 +43472,25 @@ nav.menu-hamburger .menu-wraper .menu-column {
   display: flex;
   flex-direction: column;
   position: relative;
-  z-index: 1;
+  z-index: 0;
   width: 100%;
 }
 
 @media (min-width: 992px) {
   nav.menu-hamburger .menu-wraper .menu-column {
-    width: calc(100% - 350px);
+    width: 100%;
   }
 }
 
 @media (min-width: 1200px) {
   nav.menu-hamburger .menu-wraper .menu-column {
-    width: calc(100% - 400px);
+    width: 100%;
   }
 }
 
 @media (min-width: 1440px) {
   nav.menu-hamburger .menu-wraper .menu-column {
-    width: calc(100% - 500px);
+    width: 100%;
   }
 }
 
@@ -45810,7 +45810,7 @@ nav.menu-hamburger .menu-wraper .menu-column.menucart-wrap .menu-column {
 @media (min-width: 1200px) {
   .header1 .top,
   .header1 .header-top-bar {
-    padding: 50px 0 80px;
+    /* padding: 50px 0 80px; */
   }
 }
 
@@ -47717,7 +47717,7 @@ nav.menu-hamburger .menu-wraper .menu-column.menucart-wrap .menu-column {
 @media (min-width: 1200px) {
   .home > footer .copyright p,
   .innerwrapper > footer .copyright p {
-    text-align: right;
+    text-align: center;
   }
 }
 
@@ -58776,7 +58776,7 @@ body.hotelbooking footer .bottom-right .shapes3 {
   .src-grid .main {
     padding-right: 15px;
     padding-left: 15px;
-    max-width: 60%;
+    /* max-width: 60%; */
     margin-bottom: 0px;
     order: 2;
   }
