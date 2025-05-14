@@ -51,6 +51,13 @@
       margin-bottom: 5px;
       color: #666;
       line-height: 1.4;
+      transition: all 0.3s;
+    }
+
+    .venue-dtls .desc-text.expanded {
+      -webkit-line-clamp: unset;
+      max-height: none;
+      overflow: visible;
     }
 
     .venue-dtls .read-more {
@@ -58,6 +65,9 @@
       text-decoration: none;
       font-size: 14px;
       font-weight: 500;
+      cursor: pointer;
+      display: inline-block;
+      margin-bottom: 10px;
     }
 
     .venue-dtls .read-more:hover {
@@ -94,6 +104,95 @@
       margin: 0 auto;
       /* Center the paragraph */
     }
+
+    .bannertext {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .bannertext h1 {
+      line-height: 1.1 !important;
+      text-align: center;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .bannertext h1 strong {
+      line-height: 1.1 !important;
+      text-align: center;
+      width: 100%;
+      display: block;
+    }
+
+    /* Decrease gap between top and bannertext */
+    .fixedbanner-area .container-fluid {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+    .fixedbanner-area .ctrl-wraper2 {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+    /* Hamburger menu: hide by default, show on toggle */
+    nav.menu-hamburger {
+      display: none;
+    }
+    #menu-toggle-input:checked ~ nav.menu-hamburger {
+      display: flex !important;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hotel-photos-modal {
+      position: fixed;
+      z-index: 9999;
+      left: 0; top: 0; width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.85);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .hotel-photos-modal .modal-content {
+      background: #fff;
+      border-radius: 12px;
+      padding: 32px 24px 24px 24px;
+      max-width: 600px;
+      width: 95vw;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .photos-grid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      width: 100%;
+      margin-top: 16px;
+    }
+    .photos-grid img {
+      width: 100%;
+      max-width: 420px;
+      border-radius: 8px;
+      object-fit: cover;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+      margin: 0 auto;
+      display: block;
+    }
+    #modal-hotel-title {
+      text-align: center;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    @media (max-width: 600px) {
+      .hotel-photos-modal .modal-content { padding: 12px; }
+      .photos-grid img { max-width: 98vw; }
+    }
   </style>
 
 
@@ -116,7 +215,7 @@
           <li>want to talk with us<a href="tel:3589567240">+91 9876543210</a></li>
         </ul> -->
         <!-- Hamburger nav menu -->
-        <label class="menu-ribbon menu-toggle" for="menu-toggle-inputt">
+        <label class="menu-ribbon menu-toggle" for="menu-toggle-input">
           <span class="gt-Menu-dot-icon"></span> menu
         </label>
         <input id="menu-toggle-input" type="checkbox" />
@@ -320,7 +419,7 @@
         <div class="bannertext">
           <h1 class="rellax" data-rellax-speed="3" data-rellax-percentage="0.3">
             <strong>The Valley </strong>
-            <strong>NEST<span></span></strong>
+            <strong>Nest<span></span></strong>
             <!-- <span class="banner-innertext rellax" data-rellax-speed="1" 
             data-rellax-percentage="0.35" data-title="lets go"></span> -->
           </h1>
@@ -396,8 +495,8 @@
 
 
 
-                <a class="btn-info" href="#">Information</a>
-                <a class="btn-deal" href="#">20 Deals</a>
+                <a class="btn-info" href="#">View Photos</a>
+                <!-- <a class="btn-deal" href="#">20 Deals</a> -->
                 <a class="btn-book" href="#">Book Now</a>
               </div>
             </div>
@@ -434,8 +533,8 @@
 
 
 
-                <a class="btn-info" href="#">Information</a>
-                <a class="btn-deal" href="#">20 Deals</a>
+                <a class="btn-info" href="#">View Photos</a>
+                <!-- <a class="btn-deal" href="#">20 Deals</a> -->
                 <a class="btn-book" href="#">Book Now</a>
               </div>
             </div>
@@ -472,8 +571,8 @@
 
 
 
-                <a class="btn-info" href="#">Information</a>
-                <a class="btn-deal" href="#">20 Deals</a>
+                <a class="btn-info" href="#">View Photos</a>
+                <!-- <a class="btn-deal" href="#">20 Deals</a> -->
                 <a class="btn-book" href="#">Book Now</a>
               </div>
             </div>
@@ -510,8 +609,8 @@
 
 
 
-                <a class="btn-info" href="#">Information</a>
-                <a class="btn-deal" href="#">20 Deals</a>
+                <a class="btn-info" href="#">View Photos</a>
+                <!-- <a class="btn-deal" href="#">20 Deals</a> -->
                 <a class="btn-book" href="#">Book Now</a>
               </div>
             </div>
@@ -549,8 +648,8 @@
 
 
 
-                <a class="btn-info" href="#">Information</a>
-                <a class="btn-deal" href="#">20 Deals</a>
+                <a class="btn-info" href="#">View Photos</a>
+                <!-- <a class="btn-deal" href="#">20 Deals</a> -->
                 <a class="btn-book" href="#">Book Now</a>
               </div>
             </div>
@@ -560,6 +659,15 @@
         </div>
 
       </div>
+    </div>
+  </div>
+
+  <!-- Add this after the last hotel card, before the next section -->
+  <div id="hotel-photos-modal" class="hotel-photos-modal" style="display:none;">
+    <div class="modal-content">
+      <span class="close-modal" style="font-size:2rem;cursor:pointer;position:absolute;top:10px;right:20px;z-index:10;">&times;</span>
+      <h2 id="modal-hotel-title"></h2>
+      <div class="photos-grid" id="modal-photos-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;"></div>
     </div>
   </div>
 
@@ -1143,22 +1251,23 @@
   <script>
     // Read More functionality
     document.addEventListener('DOMContentLoaded', function () {
-      const readMoreLinks = document.querySelectorAll('.read-more');
-
-      readMoreLinks.forEach(link => {
-        link.addEventListener('click', function (e) {
-          e.preventDefault();
-          const description = this.previousElementSibling;
-          const isExpanded = description.style.webkitLineClamp === 'unset';
-
-          if (isExpanded) {
-            description.style.webkitLineClamp = '2';
-            this.textContent = 'Read More';
-          } else {
-            description.style.webkitLineClamp = 'unset';
-            this.textContent = 'Show Less';
-          }
-        });
+      document.querySelectorAll('.venue-dtls .desc-text').forEach(function(desc) {
+        // Only add if text is long enough
+        if (desc.textContent.length > 120) {
+          const readMore = document.createElement('span');
+          readMore.className = 'read-more';
+          readMore.textContent = 'Read More';
+          desc.after(readMore);
+          readMore.addEventListener('click', function() {
+            if (desc.classList.contains('expanded')) {
+              desc.classList.remove('expanded');
+              readMore.textContent = 'Read More';
+            } else {
+              desc.classList.add('expanded');
+              readMore.textContent = 'Show Less';
+            }
+          });
+        }
       });
     });
   </script>
@@ -1231,6 +1340,148 @@
 
   </script>
 
+  <script>
+    // WhatsApp integration for forms and hotel booking
+    function sendWhatsAppMessage(type, form) {
+      let msg = '';
+      if (type === 'cab') {
+        msg = '*Cab Enquiry Booking*%0A';
+        msg += 'Name: ' + form.querySelector('input[placeholder="Enter your name"]').value + '%0A';
+        msg += 'Departure: ' + form.querySelector('input[placeholder="mm/dd/yyyy"]').value + '%0A';
+        msg += 'Pick up Location: ' + form.querySelector('input[placeholder="Your Pick up location"]').value + '%0A';
+        msg += 'Drop Location: ' + form.querySelector('input[placeholder="Your Drop Locaiton"]').value + '%0A';
+        msg += 'Contact Number: ' + form.querySelector('input[placeholder="Contact Number"]').value;
+      } else if (type === 'train') {
+        msg = '*Train Enquiry Booking*%0A';
+        msg += 'Name: ' + form.querySelector('input[placeholder="Enter your name"]').value + '%0A';
+        msg += 'Departure: ' + form.querySelector('input[placeholder="mm/dd/yyyy"]').value + '%0A';
+        msg += 'From: ' + form.querySelector('input[placeholder="From"]').value + '%0A';
+        msg += 'To: ' + form.querySelector('input[placeholder="To"]').value + '%0A';
+        msg += 'Number of Passengers: ' + form.querySelector('input[placeholder="Total passengers "]').value + '%0A';
+        msg += 'Contact Number: ' + form.querySelector('input[placeholder="Contact Number"]').value;
+      } else if (type === 'tour') {
+        msg = '*Tour Enquiry Booking*%0A';
+        msg += 'Name: ' + form.querySelector('input[placeholder="Enter your name"]').value + '%0A';
+        msg += 'Service Interested In: ' + form.querySelector('select').value + '%0A';
+        msg += 'Return: ' + form.querySelector('input[placeholder="mm/dd/yyyy"]').value + '%0A';
+        msg += 'Contact Number: ' + form.querySelector('input[placeholder="Enter your contact number"]').value;
+      }
+      window.open('https://wa.me/917755811162?text=' + msg, '_blank');
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Cab Booking Form
+      var cabForm = document.querySelector('#cabbooking form');
+      if (cabForm) {
+        cabForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          sendWhatsAppMessage('cab', cabForm);
+        });
+        var cabBtn = cabForm.querySelector('.btn-trpsrc');
+        if (cabBtn) {
+          cabBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            sendWhatsAppMessage('cab', cabForm);
+          });
+        }
+      }
+      // Train Booking Form
+      var trainForm = document.querySelector('#trainbooking form');
+      if (trainForm) {
+        trainForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          sendWhatsAppMessage('train', trainForm);
+        });
+        var trainBtn = trainForm.querySelector('.btn-trpsrc');
+        if (trainBtn) {
+          trainBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            sendWhatsAppMessage('train', trainForm);
+          });
+        }
+      }
+      // Tour Enquiry Form
+      var tourForm = document.querySelector('#tour-enquiry form');
+      if (tourForm) {
+        tourForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          sendWhatsAppMessage('tour', tourForm);
+        });
+        var tourBtn = tourForm.querySelector('.btn-trpsrc');
+        if (tourBtn) {
+          tourBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            sendWhatsAppMessage('tour', tourForm);
+          });
+        }
+      }
+      // Hotel Book Now buttons
+      document.querySelectorAll('.btn-book').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          var venue = btn.closest('.venue-dtls');
+          var hotelName = venue ? venue.querySelector('h3').textContent.trim() : '';
+          var msg = '*Hotel Booking Enquiry*%0AHotel: ' + hotelName + '%0AHi, I am interested in booking this hotel.';
+          window.open('https://wa.me/917755811162?text=' + msg, '_blank');
+        });
+      });
+    });
+  </script>
+
+  <script>
+    // Hotel images for each hotel (replace with your actual image paths)
+    const hotelImages = {
+      'Cave Canvas': [
+        'images/cave canvas/1.avif', 'images/cave canvas/2.avif', 'images/cave canvas/3.avif', 'images/cave canvas/4.avif', 'images/cave canvas/5.avif','images/cave canvas/6.avif','images/cave canvas/7.avif','images/cave canvas/8.avif','images/cave canvas/9.avif','images/cave canvas/10.avif','images/cave canvas/11.avif','images/cave canvas/12.avif','images/cave canvas/13.avif','images/cave canvas/14.avif','images/cave canvas/15.avif','images/cave canvas/16.avif','images/cave canvas/17.avif','images/cave canvas/18.avif','images/cave canvas/19.avif',
+      ],
+      'Cliff Canvas': [
+        'images/cliff canvas/1.avif', 'images/cliff canvas/2.avif', 'images/cliff canvas/3.avif', 'images/cliff canvas/4.avif', 'images/cliff canvas/5.avif','images/cliff canvas/6.avif','images/cliff canvas/7.avif','images/cliff canvas/8.avif','images/cliff canvas/9.avif','images/cliff canvas/10.avif','images/cliff canvas/11.avif','images/cliff canvas/12.avif','images/cliff canvas/13.avif','images/cliff canvas/14.avif','images/cliff canvas/15.avif','images/cliff canvas/16.avif','images/cliff canvas/17.avif','images/cliff canvas/18.avif','images/cliff canvas/19.avif','images/cliff canvas/20.avif'
+      ],
+      'Cob House': [
+        'images/cob house/1.avif', 'images/cob house/2.avif', 'images/cob house/3.avif', 'images/cob house/4.avif', 'images/cob house/5.avif','images/cob house/6.avif','images/cob house/7.avif','images/cob house/8.avif','images/cob house/9.avif','images/cob house/10.avif','images/cob house/11.avif','images/cob house/12.avif','images/cob house/13.avif','images/cob house/14.avif',
+      ],
+      'Glass Canvas': [
+       'images/glass canvas/1.avif', 'images/glass canvas/2.avif', 'images/glass canvas/3.avif', 'images/glass canvas/4.avif', 'images/glass canvas/5.avif','images/glass canvas/6.avif','images/glass canvas/7.avif','images/glass canvas/8.avif','images/glass canvas/9.avif','images/glass canvas/10.avif','images/glass canvas/11.avif','images/glass canvas/12.avif','images/glass canvas/13.avif','images/glass canvas/14.avif','images/glass canvas/15.avif','images/glass canvas/16.avif','images/glass canvas/17.avif','images/glass canvas/18.avif','images/glass canvas/19.avif','images/glass canvas/20.avif'
+      ],
+      'Retro Glass House': [
+        'images/retro glass house/1.avif', 'images/retro glass house/2.avif', 'images/retro glass house/3.avif', 'images/retro glass house/4.avif', 'images/retro glass house/5.avif','images/retro glass house/6.avif','images/retro glass house/7.avif','images/retro glass house/8.avif','images/retro glass house/9.avif','images/retro glass house/10.avif','images/retro glass house/11.avif','images/retro glass house/12.avif','images/retro glass house/13.avif','images/retro glass house/14.avif','images/retro glass house/15.avif','images/retro glass house/16.avif','images/retro glass house/17.avif','images/retro glass house/18.avif','images/retro glass house/19.avif','images/retro glass house/20.avif'
+      ]
+    };
+
+    // Open modal on View Photos click
+    function openHotelPhotos(hotelName) {
+      document.getElementById('modal-hotel-title').textContent = hotelName + ' - Photos';
+      const grid = document.getElementById('modal-photos-grid');
+      grid.innerHTML = '';
+      (hotelImages[hotelName] || []).forEach(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = hotelName + ' photo';
+        grid.appendChild(img);
+      });
+      document.getElementById('hotel-photos-modal').style.display = 'flex';
+    }
+    // Close modal
+    function closeHotelPhotos() {
+      document.getElementById('hotel-photos-modal').style.display = 'none';
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      // Change all .btn-info to View Photos and add click event
+      document.querySelectorAll('.venue-dtls .btn-info').forEach(function(btn) {
+        btn.textContent = 'View Photos';
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          const hotelName = btn.closest('.venue-dtls').querySelector('h3').textContent.trim();
+          openHotelPhotos(hotelName);
+        });
+      });
+      // Close modal on X click or outside click
+      document.querySelector('.close-modal').onclick = closeHotelPhotos;
+      document.getElementById('hotel-photos-modal').addEventListener('click', function(e) {
+        if (e.target === this) closeHotelPhotos();
+      });
+    });
+  </script>
 
 </body>
 
