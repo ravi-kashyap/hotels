@@ -130,8 +130,7 @@
 
     /* Decrease gap between top and bannertext */
     .fixedbanner-area .container-fluid {
-      margin-top: 0 !important;
-      padding-top: 0 !important;
+      margin-top: 0 !important; /* Default margin for desktop */
     }
     .fixedbanner-area .ctrl-wraper2 {
       margin-top: 0 !important;
@@ -145,6 +144,12 @@
       display: flex !important;
       opacity: 1;
       transform: translateY(0);
+    }
+
+    @media (max-width: 600px) {
+      .fixedbanner-area .container-fluid {
+        margin-top: 32px !important; /* Margin for mobile */
+      }
     }
 
     .hotel-photos-modal {
@@ -192,6 +197,16 @@
     @media (max-width: 600px) {
       .hotel-photos-modal .modal-content { padding: 12px; }
       .photos-grid img { max-width: 98vw; }
+    }
+
+    .tour-enquiry-section {
+      margin-top: 165px; /* Default margin for desktop */
+    }
+
+    @media (max-width: 600px) {
+      .tour-enquiry-section {
+        margin-top: 0; /* Margin for mobile */
+      }
     }
   </style>
 
@@ -540,12 +555,12 @@
           <div class="cntbox">
             <h1 class="sec-heading" data-os-animation="fadeInUp" data-os-animation-delay="1.5s">Holiday Cab <br />
               booking</h1>
-            <span class="sec-subheading" data-os-animation="fadeInUp" data-os-animation-delay="1.5s">Experience the most
-              hassle free flight booking <br />and get great deals with reasonable rates</span>
+            <span class="sec-subheading" data-os-animation="fadeInUp" data-os-animation-delay="1.5s">BOOK YOUR CAB EASILY
+              WITHOUT ANY STRESS AND ENJOY <br />AFFORDABLE FARES WITH EXCLUSIVE OFFERS</span>
 
             <div class="deals-row">
               <div class="leftbox">
-                <h2 data-os-animation="fadeInUp" data-os-animation-delay="1.5s">Great deals <br /> and great offers</h2>
+                <!-- <h2 data-os-animation="fadeInUp" data-os-animation-delay="1.5s">Great deals <br /> and great offers</h2> -->
                 <!-- <p data-os-animation="fadeInUp" data-os-animation-delay="1.5s">with reasonable rates in top airlince
                   <br /> and destinations</p> -->
 
@@ -633,12 +648,12 @@
         <div class="ctrl-inner-wraper">
           <div class="cntbox">
             <h1 class="sec-heading ">train ticket <br /> booking</h1>
-            <span class="sec-subheading ">Experience the most hassle free flight booking <br />and get great deals with
-              reasonable rates</span>
+            <span class="sec-subheading ">SECURE YOUR TRAIN TICKETS QUICKLY   <br />AND ENJOY COMPETITIVE
+              PRICING ALONG WITH SPECIAL DEALS</span>
 
             <div class="deals-row">
               <div class="leftbox">
-                <h2 class="">Great deals <br /> and great offers</h2>
+                <!-- <h2 class="">Great deals <br /> and great offers</h2> -->
                 <!-- <p class="">with reasonable rates in top airlince <br /> and destinations</p> -->
 
                 <!-- <span class="visitnow">Get something more!</span>
@@ -824,7 +839,7 @@
             <div class="vertical slider">
               <div class="csreview-item">
                 <div class="cs-thumb">
-                  <img src="images/client-pic1.jpg" alt="img" />
+                  <img src="images/user-icon.jpg" alt="img" />
                 </div>
                 <div class="cs-content">
                   <strong>Aryan</strong>
@@ -834,7 +849,7 @@
               </div>
               <div class="csreview-item">
                 <div class="cs-thumb">
-                  <img src="images/client-pic2.jpg" alt="img" />
+                  <img src="images/user-icon.jpg" alt="img" />
                 </div>
                 <div class="cs-content">
                   <strong>Shivam, Nashik, India</strong>
@@ -844,7 +859,7 @@
               </div>
               <div class="csreview-item">
                 <div class="cs-thumb">
-                  <img src="images/client-pic2.jpg" alt="img" />
+                  <img src="images/user-icon.jpg" alt="img" />
                 </div>
                 <div class="cs-content">
                   <strong>Ritika</strong>
@@ -854,7 +869,7 @@
               </div>
               <div class="csreview-item">
                 <div class="cs-thumb">
-                  <img src="images/client-pic1.jpg" alt="img" />
+                  <img src="images/user-icon.jpg" alt="img" />
                 </div>
                 <div class="cs-content">
                   <strong>Ashish, Bhopal, India</strong>
@@ -864,7 +879,7 @@
               </div>
               <div class="csreview-item">
                 <div class="cs-thumb">
-                  <img src="images/client-pic1.jpg" alt="img" />
+                  <img src="images/user-icon.jpg" alt="img" />
                 </div>
                 <div class="cs-content">
                   <strong>Kartikey, Pune, India</strong>
@@ -948,7 +963,7 @@
                   </a>
                 </li>
               </ul>
-              <p>Contact Number: <a href="tel:+917737486334">+91 7737486334</a></p>
+              <p>Number: <a href="tel:+917737486334">+91 7737486334</a></p>
               <p>Email: <a href="mailto:nesthospitality7@gmail.com">nesthospitality7@gmail.com</a></p>
             </div>
           </div>
@@ -1266,7 +1281,7 @@
           var venue = btn.closest('.venue-dtls');
           var hotelName = venue ? venue.querySelector('h3').textContent.trim() : '';
           var msg = '*Hotel Booking Enquiry*%0AHotel: ' + hotelName + '%0AHi, I am interested in booking this hotel.';
-          window.open('https://wa.me/917755811162?text=' + msg, '_blank');
+          window.open('https://wa.me/917737486334?text=' + msg, '_blank');
         });
       });
     });
