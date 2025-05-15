@@ -1977,11 +1977,11 @@ fieldset:disabled a.btn {
   border-color: #17a2b8;
 }
 
-.btn-info:hover {
+/* .btn-info:hover {
   color: #fff;
   background-color: #138496;
   border-color: #117a8b;
-}
+} */
 
 .btn-info:focus, .btn-info.focus {
   box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5);
@@ -37490,7 +37490,8 @@ a.bx--navigation-link:focus {
   font-size: 16px;
   color: #fff;
   background-color: #61a8ee;
-  padding: 13px 16px;
+  padding: 12px 16px;
+  margin :0 10px;
 }
 
 .btn-deal {
@@ -37519,17 +37520,17 @@ a.bx--navigation-link:focus {
   position: absolute;
 }
 
-@media (min-width: 992px) {
+/* @media (min-width: 992px) {
   .btn-book {
     padding: 12px 35px;
   }
-}
+} */
 
-@media (min-width: 1440px) {
+/* @media (min-width: 1440px) {
   .btn-book {
     padding: 15px 45px;
   }
-}
+} */
 
 .btn-chngcity {
   background-color: #ff9d04;
@@ -38391,36 +38392,36 @@ a.bx--navigation-link:focus {
 
 .fixedbanner-area {
   display: flex;
-  padding: 40px 0 50px;
+  /* padding: 40px 0 50px; */
 }
 
 @media (min-width: 768px) {
   .fixedbanner-area {
-    padding: 40px 0 100px;
+    /* padding: 40px 0 100px; */
   }
 }
 
 @media (min-width: 1200px) {
   .fixedbanner-area {
-    padding: 80px 0;
+    /* padding: 80px 0; */
   }
 }
 
 @media (min-width: 1440px) {
   .fixedbanner-area {
-    padding: 120px 0 80px;
+    /* padding: 120px 0 80px; */
   }
 }
 
 @media (min-width: 2280px) {
   .fixedbanner-area {
-    padding: 50px 0 80px;
+    /* padding: 50px 0 80px; */
   }
 }
 
 @media (min-width: 2280px) {
   .fixedbanner-area {
-    padding: 200px 0;
+    /* padding: 200px 0; */
   }
 }
 
@@ -59101,24 +59102,24 @@ body.hotelbooking footer .bottom-right .shapes3 {
   }
 }
 
-.src-grid .main .venue-list .venue-dtls .btn-book {
+/* .src-grid .main .venue-list .venue-dtls .btn-book {
   position: static;
   right: 0;
   margin-top: 10px;
-}
+} */
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .src-grid .main .venue-list .venue-dtls .btn-book {
     position: absolute;
     margin-top: 0px;
   }
-}
+} */
 
-@media (min-width: 1440px) {
+/* @media (min-width: 1440px) {
   .src-grid .main .venue-list .venue-dtls .btn-book {
     bottom: 40px;
   }
-}
+} */
 
 .src-grid .main .venue-list .venue-dtls .htlclass {
   font-size: 14px;
@@ -60056,39 +60057,39 @@ body.hotelbooking footer .bottom-right .shapes3 {
   }
 }
 
-@media (min-width: 1440px) {
+/* @media (min-width: 1440px) {
   .moreresult .venue-list .venue-dtls .pricebox .dscount {
     font-size: 15px;
   }
-}
+} */
 
-.moreresult .venue-list .venue-dtls .btn-book {
+/* .moreresult .venue-list .venue-dtls .btn-book {
   position: absolute;
   right: 0;
   bottom: 30px;
   padding: 8px 15px;
   font-size: 12px;
-}
+} */
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .moreresult .venue-list .venue-dtls .btn-book {
     font-size: 13px;
   }
-}
+} */
 
-@media (min-width: 992px) {
+/* @media (min-width: 992px) {
   .moreresult .venue-list .venue-dtls .btn-book {
     padding: 10px 20px;
     font-size: 15px;
   }
-}
+} */
 
-@media (min-width: 1440px) {
+/* @media (min-width: 1440px) {
   .moreresult .venue-list .venue-dtls .btn-book {
     padding: 10px 25px;
     font-size: 16px;
   }
-}
+} */
 
 .moreresult .venue-list .venue-dtls .htlclass {
   font-size: 18px;
