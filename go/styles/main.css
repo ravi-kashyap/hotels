@@ -37486,7 +37486,7 @@ a.bx--navigation-link:focus {
 
 .btn-info {
   display: inline-block;
-  border-radius: 0px;
+  border-radius: 40px;
   font-size: 16px;
   color: #fff;
   background-color: #61a8ee;
@@ -37510,12 +37510,12 @@ a.bx--navigation-link:focus {
 .btn-book {
   display: inline-block;
   font-family: "Open Sans", sans-serif;
-  border-radius: 0px;
+  border-radius: 40px;
   font-size: 16px;
   text-transform: uppercase;
   color: #fff;
   background-color: #ff7e00;
-  padding: 12px 35px;
+  padding: 12px 20px;
   font-weight: 600;
   position: absolute;
 }
@@ -49596,7 +49596,7 @@ svg.dark-blue {
 
 @media (min-width: 1200px) {
   .sec-trainbooking .secmain-img {
-    margin-left: 100px;
+    margin-left: 250px;
     max-width: 900px;
   }
 }
