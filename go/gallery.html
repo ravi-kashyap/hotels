@@ -1,0 +1,550 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5557595-21"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-5557595-21');
+  </script>
+
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Gallery</title>
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" href="favicon.ico" type="image/ico">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="styles/vendor.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/gallery.css">
+  <script src="scripts/vendor/modernizr.js"></script>
+
+  <style>
+    .gallery-container {
+      padding: 40px 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .gallery-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .gallery-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+      color: #333;
+    }
+
+    .gallery-header p {
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .gallery-grid {
+      columns: 4 300px;
+      column-gap: 20px;
+    }
+
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 20px;
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+    }
+
+    .gallery-item-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+      padding: 20px;
+      color: white;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .gallery-item:hover .gallery-item-overlay {
+      opacity: 1;
+    }
+
+    .gallery-item-overlay h3 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    .gallery-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .gallery-modal.active {
+      display: flex;
+    }
+
+    .gallery-modal-content {
+      max-width: 90%;
+      max-height: 90vh;
+      position: relative;
+    }
+
+    .gallery-modal-content img {
+      max-width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+    }
+
+    .gallery-modal-close {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      color: white;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .gallery-grid {
+        columns: 2 250px;
+      }
+
+      .gallery-header h1 {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-grid {
+        columns: 1 300px;
+      }
+
+      .gallery-container {
+        padding: 20px 10px;
+      }
+    }
+  </style>
+</head>
+
+<body class="home additional-bar">
+  <!-- Copy header from index.html -->
+  <header class="header1">
+    <div class="container-fluid">
+      <div class="top">
+        <label class="menu-ribbon menu-toggle" for="menu-toggle-input">
+          <span class="gt-Menu-dot-icon"></span> menu
+        </label>
+        <input id="menu-toggle-input" type="checkbox" />
+        <nav class="menu-hamburger">
+          <div class="menu-wraper">
+            <div class="menu-column">
+              <div class="menu-list">
+                <span class="close"> <img src="images/icons/close.svg" alt="img" /> </span>
+                <div class="logo-row">
+                  <a href="index.html"> <span class="gt-Menu-dot-icon"></span> The Valley Nest</a>
+                </div>
+                <ul class="list">
+                  <li><a href="index.html" class="nav-link">home</a></li>
+                  <li><a href="index.html#hotelbooking" class="nav-link">Hotel booking</a></li>
+                  <li><a href="index.html#cabbooking" class="nav-link">Cab Booking</a></li>
+                  <li><a href="index.html#trainbooking" class="nav-link">Rent a Bike</a></li>
+                  <li><a href="index.html#tour-enquiry" class="nav-link">Plan your experience</a></li>
+                  <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <div class="nav-row ctrl-wraper2 clearfix">
+        <a class="logo" href="index.html">
+          <span class="animated-logo"></span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Gallery Content -->
+  <div class="gallery-container">
+    <div class="gallery-header">
+      <h1 class="sec-heading" data-os-animation="fadeInUp" data-os-animation-delay="1.5s"">Gallery</h1>
+      <p>Explore our beautiful accommodations through this visual journey. Each space is thoughtfully designed to
+        provide comfort and connection with nature.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <!-- Cave Canvas -->
+      
+      <!-- Add more Cave Canvas images -->
+
+      <!-- Cliff Canvas -->
+    
+      <!-- Add more Cliff Canvas images -->
+
+      <!-- Glass Canvas -->
+      
+       
+      <!-- Add more Glass Canvas images -->
+
+      <!-- Cob House -->
+      
+       
+    
+      <!-- Add more Cob House images -->
+    </div>
+  </div>
+
+  <!-- Modal for full-size images -->
+  <div class="gallery-modal">
+    <div class="gallery-modal-content">
+      <span class="gallery-modal-close">&times;</span>
+      <img src="" alt="Full size image">
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <div class="bottom-left">
+    <svg class="shapes2 layer2 ">
+      <use xlink:href="svg/shapes.svg#shapes2" />
+    </svg>
+
+    <svg class="shapes3 layer3">
+      <use xlink:href="svg/shapes.svg#shapes3" fill="url(#dots-4)" />
+    </svg>
+  </div>
+
+  <footer>
+    <div class="container-fluid" data-rellax-speed="1" data-rellax-percentage=".7">
+      <div class="ctrl-wraper2">
+
+        <div class="ftr-main-sec">
+          <div class="cus-review">
+            <h5 class="ftr-headng">customer <br /> review</h5>
+            <div class="vertical slider">
+              <div class="csreview-item">
+                <div class="cs-thumb">
+                  <img src="images/user-icon.jpg" alt="img" />
+                </div>
+                <div class="cs-content">
+                  <strong>Aryan</strong>
+                  <p>Ajay's place is a perfect escape. Surrounded by stunning rock formations, lush greenery, and the
+                    soothing sounds of birds and monkeys, it offers a truly unique experience. The cozy rooms are
+                    comfortable, and the views are breathtaking. I wish I could have stayed an extra day, but it wasn't
+                    available. A must-visit for nature lovers.</p>
+                  <span class="rating"><img src="images/star.png" alt="img" />4.5 / 5</span>
+                </div>
+              </div>
+              <div class="csreview-item">
+                <div class="cs-thumb">
+                  <img src="images/user-icon.jpg" alt="img" />
+                </div>
+                <div class="cs-content">
+                  <strong>Shivam, Nashik, India</strong>
+                  <p>So far i have booked many bnb's and stayed at various luxury properties but this was something
+                    else, the serene beauty around and the uniquely designed rooms took my heart. The staff was so
+                    polite and helpful that we felt at home. A must stay when in Mount Abu</p>
+                  <span class="rating"><img src="images/star.png" alt="img" />4.5 / 5</span>
+                </div>
+              </div>
+              <div class="csreview-item">
+                <div class="cs-thumb">
+                  <img src="images/user-icon.jpg" alt="img" />
+                </div>
+                <div class="cs-content">
+                  <strong>Ritika</strong>
+                  <p>Had a peaceful and refreshing stay surrounded by nature. Pratap Ram was a fantastic host-very
+                    welcoming and responsive throughout. The property is beautiful and tranquil, just needs a little
+                    more attention to cleaning and upkeep. Overall, a great spot for a relaxing getaway</p>
+                  <span class="rating"><img src="images/star.png" alt="img" />4.5 / 5</span>
+                </div>
+              </div>
+              <div class="csreview-item">
+                <div class="cs-thumb">
+                  <img src="images/user-icon.jpg" alt="img" />
+                </div>
+                <div class="cs-content">
+                  <strong>Ashish, Bhopal, India</strong>
+                  <p>The room is very clean and aesthetic, Cob House is very romantic and cozy place with beautiful
+                    view. Staff is very good, their behaviour is very polite and professional. I would like to specially
+                    thank - Pratap Ram ji, Devanshu and team for the hospitality.</p>
+                  <span class="rating"><img src="images/star.png" alt="img" />4.5 / 5</span>
+                </div>
+              </div>
+              <div class="csreview-item">
+                <div class="cs-thumb">
+                  <img src="images/user-icon.jpg" alt="img" />
+                </div>
+                <div class="cs-content">
+                  <strong>Kartikey, Pune, India</strong>
+                  <p>Everything which is listed, you will get it there guaranteed. Also, one thing which I would like to
+                    mention is that their FOOD IS AWESOME. It is affordable, they have a great deal of variety, flexible
+                    with time and the taste is just how one wants.</p>
+                  <span class="rating"><img src="images/star.png" alt="img" />4.5 / 5</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu">
+            <h5 class="ftr-headng">menu</h5>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#hotelbooking">Hotel</a></li>
+              <li><a href="index.html#cabbooking">taxi booking</a></li>
+              <li><a href="index.html#trainbooking">Rent a bike</a></li>
+              <li><a href="index.html#tour-enquiry">Plan your experience</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+          </div>
+
+          <div class="social">
+            <div class="connect-with-us">
+              <h5 class="ftr-headng">Contact us</h5>
+              <ul class="social-links" style="display: flex; align-items: center;">
+                <li style="margin-right: 10px;">
+                  <a href="https://www.instagram.com/thevalleynest?igsh=MTlnZWo4Nm91cHc5Zw==">
+                    <img src="images/insta-logo.png" alt="img" height="60px" width="80px" />
+                  </a>
+                </li>
+                <li style="margin-right: 10px;">
+                  <a href="https://wa.me/917737486334?">
+                    <img src="images/whatsapp-logo.jpg" alt="img" height="60px" width="60px" />
+                  </a>
+                </li>
+              </ul>
+              <p>Number: <a href="tel:+917737486334">+917737486334</a></p>
+              <p>Email: <a href="mailto:nesthospitality7@gmail.com">nesthospitality7@gmail.com</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p>the Valley Nest</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function (b, o, i, l, e, r) {
+      b.GoogleAnalyticsObject = l;
+      b[l] || (b[l] =
+        function () {
+          (b[l].q = b[l].q || []).push(arguments)
+        });
+      b[l].l = +new Date;
+      e = o.createElement(i);
+      r = o.getElementsByTagName(i)[0];
+      e.src = '../../www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e, r)
+    }(window, document, 'script', 'ga'));
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
+
+  </script>
+
+  <script src="scripts/vendor.js"></script>
+  <script src="scripts/plugins.js"></script>
+  <script src="assets/script/jquery.ripples.js"></script>
+  <script src="assets/script/jquery.flipster.min.js"></script>
+  <script src="assets/script/pricerange.js"></script>
+  <script src="assets/script/ScrollToPlugin.min.js"></script>
+  <script src="assets/script/pb.calendar.js"></script>
+  <script src="assets/script/moment.min.js"></script>
+  <script src="assets/script/materialize.js"></script>
+  <script src="assets/script/mosaic.js"></script>
+  <script src="assets/script/swiper.js"></script>
+  <script src="assets/script/Draggable.min.js"></script>
+  <script src="assets/script/ThrowPropsPlugin.min.js"></script>
+  <script src="assets/script/DrawSVGPlugin.min.js"></script>
+  <script src="assets/script/AnticipateEase.min.js"></script>
+  <script src="assets/script/MorphSVGPlugin.min.js"></script>
+  <script src="assets/script/GSDevTools.min.js"></script>
+  <script src="assets/script/moment-with-locales.min.js"></script>
+  <script src="assets/script/rescalendar.min.js"></script>
+  <script src="assets/script/car-script.js"></script>
+  <script src="assets/script/gratedeal.js"></script>
+  <script src="assets/script/particles.min.js"></script>
+  <script src="assets/script/carbon-components.js"></script>
+  <script src="assets/script/anime.min.js"></script>
+  <script src="scripts/main.js"></script>
+  <script src="scripts/gallery.js"></script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5557595-21"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-5557595-21');
+
+  </script>
+
+       
+  <!-- Start of Async Drift Code -->
+  <script>
+    "use strict";
+
+    ! function () {
+      var t = window.driftt = window.drift = window.driftt || [];
+      if (!t.init) {
+        if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+        t.invoked = !0, t.methods = ["identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide",
+          "off", "on"
+        ],
+          t.factory = function (e) {
+            return function () {
+              var n = Array.prototype.slice.call(arguments);
+              return n.unshift(e), t.push(n), t;
+            };
+          }, t.methods.forEach(function (e) {
+            t[e] = t.factory(e);
+          }), t.load = function (t) {
+            var e = 3e5,
+              n = Math.ceil(new Date() / e) * e,
+              o = document.createElement("script");
+            o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src =
+              "https://js.driftt.com/include/" + n + "/" + t + ".js";
+            var i = document.getElementsByTagName("script")[0];
+            i.parentNode.insertBefore(o, i);
+          };
+      }
+    }();
+    drift.SNIPPET_VERSION = '0.3.1';
+    drift.load('p6rs6yxhpmn6');
+
+  </script>
+  <!-- End of Async Drift Code -->
+
+  <!-- Hotjar Tracking Code for http://html.0effortthemes.com/go/ -->
+  <script>
+    (function (h, o, t, j, a, r) {
+      h.hj = h.hj || function () {
+        (h.hj.q = h.hj.q || []).push(arguments)
+      };
+      h._hjSettings = {
+        hjid: 1578075,
+        hjsv: 6
+      };
+      a = o.getElementsByTagName('head')[0];
+      r = o.createElement('script');
+      r.async = 1;
+      r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+      a.appendChild(r);
+    })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+
+  </script>
+
+  <script>
+    // Function to fetch and display images from folders
+    async function loadGalleryImages() {
+      const folders = ['cave canvas', 'cliff canvas', 'cob house'];
+      const galleryGrid = document.querySelector('.gallery-grid');
+      
+      // Clear existing content
+      galleryGrid.innerHTML = '';
+
+      // Function to create gallery item
+      function createGalleryItem(imagePath, folderName) {
+        const item = document.createElement('div');
+        item.className = 'gallery-item';
+        item.setAttribute('data-category', folderName.toLowerCase().replace(' ', '-'));
+
+        const img = document.createElement('img');
+        img.src = imagePath;
+        img.alt = folderName;
+
+        const overlay = document.createElement('div');
+        overlay.className = 'gallery-item-overlay';
+        const title = document.createElement('h3');
+        title.textContent = folderName;
+        overlay.appendChild(title);
+
+        item.appendChild(img);
+        item.appendChild(overlay);
+        return item;
+      }
+
+      // Load images from each folder
+      for (const folder of folders) {
+        // Create 19 gallery items for each folder (1.avif to 19.avif)
+        for (let i = 1; i <= 19; i++) {
+          const imagePath = `images/${folder}/${i}.avif`;
+          const galleryItem = createGalleryItem(imagePath, folder);
+          galleryGrid.appendChild(galleryItem);
+        }
+      }
+
+      // Initialize modal functionality
+      initializeModal();
+    }
+
+    // Function to initialize modal functionality
+    function initializeModal() {
+      const modal = document.querySelector('.gallery-modal');
+      const modalImg = modal.querySelector('img');
+      const closeBtn = modal.querySelector('.gallery-modal-close');
+      const galleryItems = document.querySelectorAll('.gallery-item');
+
+      galleryItems.forEach(item => {
+        item.addEventListener('click', function() {
+          const imgSrc = this.querySelector('img').src;
+          modalImg.src = imgSrc;
+          modal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      closeBtn.addEventListener('click', function() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          modal.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+    }
+
+    // Load images when the page loads
+    document.addEventListener('DOMContentLoaded', loadGalleryImages);
+  </script>
+</body>
+
+</html>

@@ -112,6 +112,7 @@
       justify-content: center;
       text-align: center;
     }
+
     .bannertext h1 {
       line-height: 1.1 !important;
       text-align: center;
@@ -121,6 +122,7 @@
       align-items: center;
       justify-content: center;
     }
+
     .bannertext h1 strong {
       line-height: 1.1 !important;
       text-align: center;
@@ -130,17 +132,21 @@
 
     /* Decrease gap between top and bannertext */
     .fixedbanner-area .container-fluid {
-      margin-top: 0 !important; /* Default margin for desktop */
+      margin-top: 0 !important;
+      /* Default margin for desktop */
     }
+
     .fixedbanner-area .ctrl-wraper2 {
       margin-top: 0 !important;
       padding-top: 0 !important;
     }
+
     /* Hamburger menu: hide by default, show on toggle */
     nav.menu-hamburger {
       display: none;
     }
-    #menu-toggle-input:checked ~ nav.menu-hamburger {
+
+    #menu-toggle-input:checked~nav.menu-hamburger {
       display: flex !important;
       opacity: 1;
       transform: translateY(0);
@@ -148,17 +154,24 @@
 
     @media (max-width: 600px) {
       .fixedbanner-area .container-fluid {
-        margin-top: 32px !important; /* Margin for mobile */
+        margin-top: 32px !important;
+        /* Margin for mobile */
       }
     }
 
     .hotel-photos-modal {
       position: fixed;
       z-index: 9999;
-      left: 0; top: 0; width: 100vw; height: 100vh;
-      background: rgba(0,0,0,0.85);
-      display: flex; align-items: center; justify-content: center;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.85);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
+
     .hotel-photos-modal .modal-content {
       background: #fff;
       border-radius: 12px;
@@ -172,6 +185,7 @@
       flex-direction: column;
       align-items: center;
     }
+
     .photos-grid {
       display: flex;
       flex-direction: column;
@@ -180,32 +194,42 @@
       width: 100%;
       margin-top: 16px;
     }
+
     .photos-grid img {
       width: 100%;
       max-width: 420px;
       border-radius: 8px;
       object-fit: cover;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
       margin: 0 auto;
       display: block;
     }
+
     #modal-hotel-title {
       text-align: center;
       width: 100%;
       margin-bottom: 10px;
     }
+
     @media (max-width: 600px) {
-      .hotel-photos-modal .modal-content { padding: 12px; }
-      .photos-grid img { max-width: 98vw; }
+      .hotel-photos-modal .modal-content {
+        padding: 12px;
+      }
+
+      .photos-grid img {
+        max-width: 98vw;
+      }
     }
 
     .tour-enquiry-section {
-      margin-top: 165px; /* Default margin for desktop */
+      margin-top: 165px;
+      /* Default margin for desktop */
     }
 
     @media (max-width: 600px) {
       .tour-enquiry-section {
-        margin-top: 0; /* Margin for mobile */
+        margin-top: 0;
+        /* Margin for mobile */
       }
     }
   </style>
@@ -250,11 +274,12 @@
                   <li><a href="#cabbooking" class="nav-link">Cab Booking</a></li>
                   <li><a href="#trainbooking" class="nav-link">Rent a Bike</a></li>
                   <li><a href="#tour-enquiry" class="nav-link">Plan your experience</a></li>
+                  <li><a href="gallery.html" class="nav-link">Gallery</a></li>
                 </ul>
               </div>
             </div>
 
-          
+
 
           </div>
         </nav>
@@ -525,9 +550,11 @@
   <!-- Add this after the last hotel card, before the next section -->
   <div id="hotel-photos-modal" class="hotel-photos-modal" style="display:none;">
     <div class="modal-content">
-      <span class="close-modal" style="font-size:2rem;cursor:pointer;position:absolute;top:10px;right:20px;z-index:10;">&times;</span>
+      <span class="close-modal"
+        style="font-size:2rem;cursor:pointer;position:absolute;top:10px;right:20px;z-index:10;">&times;</span>
       <h2 id="modal-hotel-title"></h2>
-      <div class="photos-grid" id="modal-photos-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;"></div>
+      <div class="photos-grid" id="modal-photos-grid"
+        style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;"></div>
     </div>
   </div>
 
@@ -555,7 +582,8 @@
           <div class="cntbox">
             <h1 class="sec-heading" data-os-animation="fadeInUp" data-os-animation-delay="1.5s">Holiday Cab <br />
               booking</h1>
-            <span class="sec-subheading" data-os-animation="fadeInUp" data-os-animation-delay="1.5s">BOOK YOUR CAB EASILY
+            <span class="sec-subheading" data-os-animation="fadeInUp" data-os-animation-delay="1.5s">BOOK YOUR CAB
+              EASILY
               WITHOUT ANY STRESS AND ENJOY <br />AFFORDABLE FARES WITH EXCLUSIVE OFFERS</span>
 
             <div class="deals-row">
@@ -648,7 +676,8 @@
         <div class="ctrl-inner-wraper">
           <div class="cntbox">
             <h1 class="sec-heading ">Rent A <br /> Bike</h1>
-            <span class="sec-subheading ">BOOK YOUR BIKE IN MINUTES <br />AND ENJOY AFFORDABLE RATES ALONG WITH EXCLUSIVE OFFERS</span>
+            <span class="sec-subheading ">BOOK YOUR BIKE IN MINUTES <br />AND ENJOY AFFORDABLE RATES ALONG WITH
+              EXCLUSIVE OFFERS</span>
 
             <div class="deals-row">
               <div class="leftbox">
@@ -722,15 +751,15 @@
                 </div>
 
                 <div data-date-picker data-date-picker-type="single"
-                class="form-field icon-calendar bx--date-picker bx--date-picker--single" data-os-animation="fadeInUp"
-                data-os-animation-delay="1">
-                <svg data-date-picker-icon class="bx--date-picker__icon"></svg>
-                <label>Pick up date</label>
-                <input type="text" id="date-picker-5" class="inputype1 bx--date-picker__input"
-                  pattern="\d{1,2}/\d{1,2}/\d{4}" placeholder="mm/dd/yyyy" data-date-picker-input />
-              </div>
+                  class="form-field icon-calendar bx--date-picker bx--date-picker--single" data-os-animation="fadeInUp"
+                  data-os-animation-delay="1">
+                  <svg data-date-picker-icon class="bx--date-picker__icon"></svg>
+                  <label>Pick up date</label>
+                  <input type="text" id="date-picker-5" class="inputype1 bx--date-picker__input"
+                    pattern="\d{1,2}/\d{1,2}/\d{4}" placeholder="mm/dd/yyyy" data-date-picker-input />
+                </div>
 
-              
+
 
                 <div class="form-field icon-location srcby-counter">
                   <label>NUmber of days</label>
@@ -772,7 +801,8 @@
     <div class="container-fluid">
       <div class="ctrl-wraper2"
         style="display: flex; justify-content: center; align-items: center; flex-direction: column; ">
-        <h1 style="font-weight: 800;" class="sec-heading" data-os-animation="fadeInUp" data-os-animation-delay="1.5s">Plan your experience</h1>
+        <h1 style="font-weight: 800;" class="sec-heading" data-os-animation="fadeInUp" data-os-animation-delay="1.5s">
+          Plan your experience</h1>
         <div class="formbox">
           <div class="pnl-body">
             <form>
@@ -844,7 +874,10 @@
                 </div>
                 <div class="cs-content">
                   <strong>Aryan</strong>
-                  <p>Ajay's place is a perfect escape. Surrounded by stunning rock formations, lush greenery, and the soothing sounds of birds and monkeys, it offers a truly unique experience. The cozy rooms are comfortable, and the views are breathtaking. I wish I could have stayed an extra day, but it wasn't available. A must-visit for nature lovers.</p>
+                  <p>Ajay's place is a perfect escape. Surrounded by stunning rock formations, lush greenery, and the
+                    soothing sounds of birds and monkeys, it offers a truly unique experience. The cozy rooms are
+                    comfortable, and the views are breathtaking. I wish I could have stayed an extra day, but it wasn't
+                    available. A must-visit for nature lovers.</p>
                   <span class="rating"><img src="images/star.png" alt="img" />4.5 / 5</span>
                 </div>
               </div>
@@ -854,7 +887,9 @@
                 </div>
                 <div class="cs-content">
                   <strong>Shivam, Nashik, India</strong>
-                  <p>So far i have booked many bnb's and stayed at various luxury properties but this was something else, the serene beauty around and the uniquely designed rooms took my heart. The staff was so polite and helpful that we felt at home. A must stay when in Mount Abu</p>
+                  <p>So far i have booked many bnb's and stayed at various luxury properties but this was something
+                    else, the serene beauty around and the uniquely designed rooms took my heart. The staff was so
+                    polite and helpful that we felt at home. A must stay when in Mount Abu</p>
                   <span class="rating"><img src="images/star.png" alt="img" />4.5 / 5</span>
                 </div>
               </div>
@@ -864,7 +899,9 @@
                 </div>
                 <div class="cs-content">
                   <strong>Ritika</strong>
-                  <p>Had a peaceful and refreshing stay surrounded by nature. Pratap Ram was a fantastic host-very welcoming and responsive throughout. The property is beautiful and tranquil, just needs a little more attention to cleaning and upkeep. Overall, a great spot for a relaxing getaway</p>
+                  <p>Had a peaceful and refreshing stay surrounded by nature. Pratap Ram was a fantastic host-very
+                    welcoming and responsive throughout. The property is beautiful and tranquil, just needs a little
+                    more attention to cleaning and upkeep. Overall, a great spot for a relaxing getaway</p>
                   <span class="rating"><img src="images/star.png" alt="img" />4.5 / 5</span>
                 </div>
               </div>
@@ -874,7 +911,9 @@
                 </div>
                 <div class="cs-content">
                   <strong>Ashish, Bhopal, India</strong>
-                  <p>The room is very clean and aesthetic, Cob House is very romantic and cozy place with beautiful view. Staff is very good, their behaviour is very polite and professional. I would like to specially thank - Pratap Ram ji, Devanshu and team for the hospitality.</p>
+                  <p>The room is very clean and aesthetic, Cob House is very romantic and cozy place with beautiful
+                    view. Staff is very good, their behaviour is very polite and professional. I would like to specially
+                    thank - Pratap Ram ji, Devanshu and team for the hospitality.</p>
                   <span class="rating"><img src="images/star.png" alt="img" />4.5 / 5</span>
                 </div>
               </div>
@@ -884,7 +923,9 @@
                 </div>
                 <div class="cs-content">
                   <strong>Kartikey, Pune, India</strong>
-                  <p>Everything which is listed, you will get it there guaranteed. Also, one thing which I would like to mention is that their FOOD IS AWESOME. It is affordable, they have a great deal of variety, flexible with time and the taste is just how one wants.</p>
+                  <p>Everything which is listed, you will get it there guaranteed. Also, one thing which I would like to
+                    mention is that their FOOD IS AWESOME. It is affordable, they have a great deal of variety, flexible
+                    with time and the taste is just how one wants.</p>
                   <span class="rating"><img src="images/star.png" alt="img" />4.5 / 5</span>
                 </div>
               </div>
@@ -894,61 +935,63 @@
           <div class="menu">
             <h5 class="ftr-headng">menu</h5>
             <ul>
+              <li><a href="index.html">Home</a></li>
               <li><a href="#hotelbooking">Hotel</a></li>
               <li><a href="#cabbooking">taxi booking</a></li>
               <li><a href="#trainbooking">Rent a bike</a></li>
               <li><a href="#tour-enquiry">Plan your experience</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
             </ul>
 
             <!-- <a class="cart-box" href="#"><span class="gt-shopping-bag cart-icon"></span>item in your cart</a> -->
           </div>
 
           <!-- <div class="news">
-            <h5 class="ftr-headng">news</h5>
-            <ul class="newslist">
-              <li>
-                <a href="blognews.html">
-                  <span class="nsthumb"><img src="images/footer-news-thumb1.jpg" alt="img" /></span>
-                  <p>News title goes here with bold text</p>
-                  <span class="date">15 june</span>
-                </a>
-              </li>
-              <li>
-                <a href="blognews.html">
-                  <span class="nsthumb"><img src="images/footer-news-thumb2.jpg" alt="img" /></span>
-                  <p>News title goes here with bold text</p>
-                  <span class="date">15 june</span>
-                </a>
-              </li>
-              <li>
-                <a href="blognews.html">
-                  <span class="nsthumb"><img src="images/footer-news-thumb3.jpg" alt="img" /></span>
-                  <p>News title goes here with bold text</p>
-                  <span class="date">15 june</span>
-                </a>
-              </li>
-              <li>
-                <a href="blognews.html">
-                  <span class="nsthumb"><img src="images/footer-news-thumb4.jpg" alt="img" /></span>
-                  <p>News title goes here with bold text</p>
-                  <span class="date">15 june</span>
-                </a>
-              </li>
-            </ul>
-          </div> -->
+              <h5 class="ftr-headng">news</h5>
+              <ul class="newslist">
+                <li>
+                  <a href="blognews.html">
+                    <span class="nsthumb"><img src="images/footer-news-thumb1.jpg" alt="img" /></span>
+                    <p>News title goes here with bold text</p>
+                    <span class="date">15 june</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="blognews.html">
+                    <span class="nsthumb"><img src="images/footer-news-thumb2.jpg" alt="img" /></span>
+                    <p>News title goes here with bold text</p>
+                    <span class="date">15 june</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="blognews.html">
+                    <span class="nsthumb"><img src="images/footer-news-thumb3.jpg" alt="img" /></span>
+                    <p>News title goes here with bold text</p>
+                    <span class="date">15 june</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="blognews.html">
+                    <span class="nsthumb"><img src="images/footer-news-thumb4.jpg" alt="img" /></span>
+                    <p>News title goes here with bold text</p>
+                    <span class="date">15 june</span>
+                  </a>
+                </li>
+              </ul>
+            </div> -->
 
           <div class="social">
             <!-- <div class="instagram">
-              <h5 class="ftr-headng">instagram</h5>
-              <ul class="insta-thumbgal">
-                <li><a href="#"><img src="images/insta-logo.png " alt="img" /></a></li>
-                <li><a href="#"><img src="images/insta-thumb2.jpg" alt="img" /></a></li>
-                <li><a href="#"><img src="images/insta-thumb3.jpg" alt="img" /></a></li>
-                <li><a href="#"><img src="images/insta-thumb4.jpg" alt="img" /></a></li>
-                <li><a href="#"><img src="images/insta-thumb5.jpg" alt="img" /></a></li>
-                <li><a href="#"><img src="images/insta-thumb6.jpg" alt="img" /></a></li>
-              </ul>
-            </div> -->
+                <h5 class="ftr-headng">instagram</h5>
+                <ul class="insta-thumbgal">
+                  <li><a href="#"><img src="images/insta-logo.png " alt="img" /></a></li>
+                  <li><a href="#"><img src="images/insta-thumb2.jpg" alt="img" /></a></li>
+                  <li><a href="#"><img src="images/insta-thumb3.jpg" alt="img" /></a></li>
+                  <li><a href="#"><img src="images/insta-thumb4.jpg" alt="img" /></a></li>
+                  <li><a href="#"><img src="images/insta-thumb5.jpg" alt="img" /></a></li>
+                  <li><a href="#"><img src="images/insta-thumb6.jpg" alt="img" /></a></li>
+                </ul>
+              </div> -->
 
             <div class="connect-with-us">
               <h5 class="ftr-headng">Contact us</h5>
@@ -971,34 +1014,34 @@
         </div>
       </div>
 
-     <!-- <div class="footernote-area">
+      <!-- <div class="footernote-area">
 
-         <div class="footer-logo-box">
-          <a class="footer-logo" href="index.html">
-            <img src="images/logo.png" alt="logo" />
-            <span class="logo animated-logo"></span>
-          </a>
-          <div class="ftr-logo-txt">
-            <strong>cholo lets go</strong>
-            <span>The one and only stop for every traveler</span>
-          </div>
-        </div> -->
-<!-- 
-        <ul class="footer-dtls">
-          <li><a href="#"><span class="gt-internet"></span>we have worldwide travel <br /> operators</a></li>
-          <li><a href="#"><span class="gt-package"></span>free shipping</a></li>
-          <li><a href="#"><span class="gt-right-arrow"></span>hassle free cancel <br />policies</a></li>
-        </ul> -->
+          <div class="footer-logo-box">
+            <a class="footer-logo" href="index.html">
+              <img src="images/logo.png" alt="logo" />
+              <span class="logo animated-logo"></span>
+            </a>
+            <div class="ftr-logo-txt">
+              <strong>cholo lets go</strong>
+              <span>The one and only stop for every traveler</span>
+            </div>
+          </div> -->
+      <!-- 
+          <ul class="footer-dtls">
+            <li><a href="#"><span class="gt-internet"></span>we have worldwide travel <br /> operators</a></li>
+            <li><a href="#"><span class="gt-package"></span>free shipping</a></li>
+            <li><a href="#"><span class="gt-right-arrow"></span>hassle free cancel <br />policies</a></li>
+          </ul> -->
 
 
-      </div>
+    </div>
 
-      <div class="copyright">
-        <p>the Valley Nest</p>
-      </div>
+    <div class="copyright">
+      <p>the Valley Nest</p>
+    </div>
 
-        </div>
-      </div>
+    </div>
+    </div>
   </footer>
 
 
@@ -1111,14 +1154,14 @@
   <script>
     // Read More functionality
     document.addEventListener('DOMContentLoaded', function () {
-      document.querySelectorAll('.venue-dtls .desc-text').forEach(function(desc) {
+      document.querySelectorAll('.venue-dtls .desc-text').forEach(function (desc) {
         // Only add if text is long enough
         if (desc.textContent.length > 120) {
           const readMore = document.createElement('span');
           readMore.className = 'read-more';
           readMore.textContent = 'Read More';
           desc.after(readMore);
-          readMore.addEventListener('click', function() {
+          readMore.addEventListener('click', function () {
             if (desc.classList.contains('expanded')) {
               desc.classList.remove('expanded');
               readMore.textContent = 'Read More';
@@ -1233,13 +1276,13 @@
       // Cab Booking Form
       var cabForm = document.querySelector('#cabbooking form');
       if (cabForm) {
-        cabForm.addEventListener('submit', function(e) {
+        cabForm.addEventListener('submit', function (e) {
           e.preventDefault();
           sendWhatsAppMessage('cab', cabForm);
         });
         var cabBtn = cabForm.querySelector('.btn-trpsrc');
         if (cabBtn) {
-          cabBtn.addEventListener('click', function(e) {
+          cabBtn.addEventListener('click', function (e) {
             e.preventDefault();
             sendWhatsAppMessage('cab', cabForm);
           });
@@ -1248,13 +1291,13 @@
       // Train Booking Form
       var trainForm = document.querySelector('#trainbooking form');
       if (trainForm) {
-        trainForm.addEventListener('submit', function(e) {
+        trainForm.addEventListener('submit', function (e) {
           e.preventDefault();
           sendWhatsAppMessage('train', trainForm);
         });
         var trainBtn = trainForm.querySelector('.btn-trpsrc');
         if (trainBtn) {
-          trainBtn.addEventListener('click', function(e) {
+          trainBtn.addEventListener('click', function (e) {
             e.preventDefault();
             sendWhatsAppMessage('train', trainForm);
           });
@@ -1263,21 +1306,21 @@
       // Tour Enquiry Form
       var tourForm = document.querySelector('#tour-enquiry form');
       if (tourForm) {
-        tourForm.addEventListener('submit', function(e) {
+        tourForm.addEventListener('submit', function (e) {
           e.preventDefault();
           sendWhatsAppMessage('tour', tourForm);
         });
         var tourBtn = tourForm.querySelector('.btn-trpsrc');
         if (tourBtn) {
-          tourBtn.addEventListener('click', function(e) {
+          tourBtn.addEventListener('click', function (e) {
             e.preventDefault();
             sendWhatsAppMessage('tour', tourForm);
           });
         }
       }
       // Hotel Book Now buttons
-      document.querySelectorAll('.btn-book').forEach(function(btn) {
-        btn.addEventListener('click', function(e) {
+      document.querySelectorAll('.btn-book').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
           e.preventDefault();
           var venue = btn.closest('.venue-dtls');
           var hotelName = venue ? venue.querySelector('h3').textContent.trim() : '';
@@ -1292,19 +1335,19 @@
     // Hotel images for each hotel (replace with your actual image paths)
     const hotelImages = {
       'Cave Canvas': [
-        'images/cave canvas/1.avif', 'images/cave canvas/2.avif', 'images/cave canvas/3.avif', 'images/cave canvas/4.avif', 'images/cave canvas/5.avif','images/cave canvas/6.avif','images/cave canvas/7.avif','images/cave canvas/8.avif','images/cave canvas/9.avif','images/cave canvas/10.avif','images/cave canvas/11.avif','images/cave canvas/12.avif','images/cave canvas/13.avif','images/cave canvas/14.avif','images/cave canvas/15.avif','images/cave canvas/16.avif','images/cave canvas/17.avif','images/cave canvas/18.avif','images/cave canvas/19.avif',
+        'images/cave canvas/1.avif', 'images/cave canvas/2.avif', 'images/cave canvas/3.avif', 'images/cave canvas/4.avif', 'images/cave canvas/5.avif', 'images/cave canvas/6.avif', 'images/cave canvas/7.avif', 'images/cave canvas/8.avif', 'images/cave canvas/9.avif', 'images/cave canvas/10.avif', 'images/cave canvas/11.avif', 'images/cave canvas/12.avif', 'images/cave canvas/13.avif', 'images/cave canvas/14.avif', 'images/cave canvas/15.avif', 'images/cave canvas/16.avif', 'images/cave canvas/17.avif', 'images/cave canvas/18.avif', 'images/cave canvas/19.avif',
       ],
       'Cliff Canvas': [
-        'images/cliff canvas/1.avif', 'images/cliff canvas/2.avif', 'images/cliff canvas/3.avif', 'images/cliff canvas/4.avif', 'images/cliff canvas/5.avif','images/cliff canvas/6.avif','images/cliff canvas/7.avif','images/cliff canvas/8.avif','images/cliff canvas/9.avif','images/cliff canvas/10.avif','images/cliff canvas/11.avif','images/cliff canvas/12.avif','images/cliff canvas/13.avif','images/cliff canvas/14.avif','images/cliff canvas/15.avif','images/cliff canvas/16.avif','images/cliff canvas/17.avif','images/cliff canvas/18.avif','images/cliff canvas/19.avif','images/cliff canvas/20.avif'
+        'images/cliff canvas/1.avif', 'images/cliff canvas/2.avif', 'images/cliff canvas/3.avif', 'images/cliff canvas/4.avif', 'images/cliff canvas/5.avif', 'images/cliff canvas/6.avif', 'images/cliff canvas/7.avif', 'images/cliff canvas/8.avif', 'images/cliff canvas/9.avif', 'images/cliff canvas/10.avif', 'images/cliff canvas/11.avif', 'images/cliff canvas/12.avif', 'images/cliff canvas/13.avif', 'images/cliff canvas/14.avif', 'images/cliff canvas/15.avif', 'images/cliff canvas/16.avif', 'images/cliff canvas/17.avif', 'images/cliff canvas/18.avif', 'images/cliff canvas/19.avif', 'images/cliff canvas/20.avif'
       ],
       'Cob House': [
-        'images/cob house/1.avif', 'images/cob house/2.avif', 'images/cob house/3.avif', 'images/cob house/4.avif', 'images/cob house/5.avif','images/cob house/6.avif','images/cob house/7.avif','images/cob house/8.avif','images/cob house/9.avif','images/cob house/10.avif','images/cob house/11.avif','images/cob house/12.avif','images/cob house/13.avif','images/cob house/14.avif',
+        'images/cob house/1.avif', 'images/cob house/2.avif', 'images/cob house/3.avif', 'images/cob house/4.avif', 'images/cob house/5.avif', 'images/cob house/6.avif', 'images/cob house/7.avif', 'images/cob house/8.avif', 'images/cob house/9.avif', 'images/cob house/10.avif', 'images/cob house/11.avif', 'images/cob house/12.avif', 'images/cob house/13.avif', 'images/cob house/14.avif',
       ],
       'Glass Canvas': [
-       'images/glass canvas/1.avif', 'images/glass canvas/2.avif', 'images/glass canvas/3.avif', 'images/glass canvas/4.avif', 'images/glass canvas/5.avif','images/glass canvas/6.avif','images/glass canvas/7.avif','images/glass canvas/8.avif','images/glass canvas/9.avif','images/glass canvas/10.avif','images/glass canvas/11.avif','images/glass canvas/12.avif','images/glass canvas/13.avif','images/glass canvas/14.avif','images/glass canvas/15.avif','images/glass canvas/16.avif','images/glass canvas/17.avif','images/glass canvas/18.avif','images/glass canvas/19.avif','images/glass canvas/20.avif'
+        'images/glass canvas/1.avif', 'images/glass canvas/2.avif', 'images/glass canvas/3.avif', 'images/glass canvas/4.avif', 'images/glass canvas/5.avif', 'images/glass canvas/6.avif', 'images/glass canvas/7.avif', 'images/glass canvas/8.avif', 'images/glass canvas/9.avif', 'images/glass canvas/10.avif', 'images/glass canvas/11.avif', 'images/glass canvas/12.avif', 'images/glass canvas/13.avif', 'images/glass canvas/14.avif', 'images/glass canvas/15.avif', 'images/glass canvas/16.avif', 'images/glass canvas/17.avif', 'images/glass canvas/18.avif', 'images/glass canvas/19.avif', 'images/glass canvas/20.avif'
       ],
       'Retro Glass House': [
-        'images/retro glass house/1.avif', 'images/retro glass house/2.avif', 'images/retro glass house/3.avif', 'images/retro glass house/4.avif', 'images/retro glass house/5.avif','images/retro glass house/6.avif','images/retro glass house/7.avif','images/retro glass house/8.avif','images/retro glass house/9.avif','images/retro glass house/10.avif','images/retro glass house/11.avif','images/retro glass house/12.avif','images/retro glass house/13.avif','images/retro glass house/14.avif','images/retro glass house/15.avif','images/retro glass house/16.avif','images/retro glass house/17.avif','images/retro glass house/18.avif','images/retro glass house/19.avif'
+        'images/retro glass house/1.avif', 'images/retro glass house/2.avif', 'images/retro glass house/3.avif', 'images/retro glass house/4.avif', 'images/retro glass house/5.avif', 'images/retro glass house/6.avif', 'images/retro glass house/7.avif', 'images/retro glass house/8.avif', 'images/retro glass house/9.avif', 'images/retro glass house/10.avif', 'images/retro glass house/11.avif', 'images/retro glass house/12.avif', 'images/retro glass house/13.avif', 'images/retro glass house/14.avif', 'images/retro glass house/15.avif', 'images/retro glass house/16.avif', 'images/retro glass house/17.avif', 'images/retro glass house/18.avif', 'images/retro glass house/19.avif'
       ]
     };
 
@@ -1325,11 +1368,11 @@
     function closeHotelPhotos() {
       document.getElementById('hotel-photos-modal').style.display = 'none';
     }
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       // Change all .btn-info to View Photos and add click event
-      document.querySelectorAll('.venue-dtls .btn-info').forEach(function(btn) {
+      document.querySelectorAll('.venue-dtls .btn-info').forEach(function (btn) {
         btn.textContent = 'View Photos';
-        btn.addEventListener('click', function(e) {
+        btn.addEventListener('click', function (e) {
           e.preventDefault();
           const hotelName = btn.closest('.venue-dtls').querySelector('h3').textContent.trim();
           openHotelPhotos(hotelName);
@@ -1337,21 +1380,21 @@
       });
       // Close modal on X click or outside click
       document.querySelector('.close-modal').onclick = closeHotelPhotos;
-      document.getElementById('hotel-photos-modal').addEventListener('click', function(e) {
+      document.getElementById('hotel-photos-modal').addEventListener('click', function (e) {
         if (e.target === this) closeHotelPhotos();
       });
     });
   </script>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       // Get all navigation links
       const navLinks = document.querySelectorAll('.nav-link');
       const menuToggleInput = document.getElementById('menu-toggle-input');
 
       // Add click event to each link
       navLinks.forEach(link => {
-        link.addEventListener('click', function() {
+        link.addEventListener('click', function () {
           // Close the navbar
           menuToggleInput.checked = false; // Uncheck the menu toggle to close the navbar
         });
