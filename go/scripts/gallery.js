@@ -1,14 +1,13 @@
 // Gallery configuration
 const GALLERY_CONFIG = {
   folders: {
-    'cob house': 14,
     'cave canvas': 19,
     'cliff canvas': 20,
     'glass canvas': 23,
     'retro glass house': 19
   },
   imageExtension: '.avif',
-  initialPreviewCount: 8 // Number of images to show initially
+  initialPreviewCount: 8
 };
 
 // Function to create image path
@@ -71,71 +70,84 @@ function createButton(text, isViewMore = true) {
 // Function to load gallery images
 function loadGalleryImages() {
   const galleryGrid = document.querySelector('.gallery-grid');
-  
-  // Clear existing content
   galleryGrid.innerHTML = '';
 
-  // Create arrays to store all gallery items
   const allGalleryItems = [];
   let currentIndex = 0;
+  let totalImagesToCheck = 0;
+  let totalImagesChecked = 0;
 
-  // Create gallery items for all images
   Object.entries(GALLERY_CONFIG.folders).forEach(([folder, count]) => {
     for (let i = 1; i <= count; i++) {
       const imagePath = createImagePath(folder, i);
-      const galleryItem = createGalleryItem(imagePath, folder);
-      allGalleryItems.push(galleryItem);
+      totalImagesToCheck++;
+
+      const img = new Image();
+      img.onload = () => {
+        const item = createGalleryItem(imagePath, folder);
+        allGalleryItems.push(item);
+
+        if (currentIndex < GALLERY_CONFIG.initialPreviewCount) {
+          galleryGrid.appendChild(item);
+          currentIndex++;
+        }
+
+        totalImagesChecked++;
+        if (totalImagesChecked === totalImagesToCheck) {
+          updateButtonState();
+          initializeModal();
+        }
+      };
+
+      img.onerror = () => {
+        console.warn(`Skipping missing image: ${imagePath}`);
+        totalImagesChecked++;
+        if (totalImagesChecked === totalImagesToCheck) {
+          updateButtonState();
+          initializeModal();
+        }
+      };
+
+      img.src = imagePath;
     }
   });
 
-  // Function to show more images
   function showMoreImages() {
     const endIndex = Math.min(currentIndex + GALLERY_CONFIG.initialPreviewCount, allGalleryItems.length);
-    
     for (let i = currentIndex; i < endIndex; i++) {
       galleryGrid.appendChild(allGalleryItems[i]);
     }
-    
     currentIndex = endIndex;
-
-    // Update button state
     updateButtonState();
   }
 
-  // Function to show less images
   function showLessImages() {
-    // Remove all current images
-    while (galleryGrid.firstChild) {
-      galleryGrid.removeChild(galleryGrid.firstChild);
-    }
-
-    // Reset to initial state
+    galleryGrid.innerHTML = '';
     currentIndex = 0;
-    showMoreImages();
+    for (let i = 0; i < Math.min(GALLERY_CONFIG.initialPreviewCount, allGalleryItems.length); i++) {
+      galleryGrid.appendChild(allGalleryItems[i]);
+    }
+    currentIndex = Math.min(GALLERY_CONFIG.initialPreviewCount, allGalleryItems.length);
+    updateButtonState();
   }
 
-  // Function to update button state
   function updateButtonState() {
     const existingButton = document.querySelector('.gallery-button-container');
     if (existingButton) {
       existingButton.remove();
     }
 
-    if (currentIndex >= allGalleryItems.length) {
-      // All images are shown, add "Show Less" button
+    if (currentIndex >= allGalleryItems.length && allGalleryItems.length > GALLERY_CONFIG.initialPreviewCount) {
       const showLessContainer = createButton('Show Less', false);
       galleryGrid.parentNode.insertBefore(showLessContainer, galleryGrid.nextSibling);
-      
       const showLessBtn = showLessContainer.querySelector('.view-less-btn');
       showLessBtn.addEventListener('click', () => {
         showLessImages();
         initializeModal();
       });
     } else if (allGalleryItems.length > GALLERY_CONFIG.initialPreviewCount) {
-      // More images to show, add "View Full Gallery" button
-      const viewMoreContainer = createButton('View More', true);
+      const viewMoreContainer = createButton('View Full Gallery', true);
       galleryGrid.parentNode.insertBefore(viewMoreContainer, galleryGrid.nextSibling);
-      
       const viewMoreBtn = viewMoreContainer.querySelector('.view-more-btn');
       viewMoreBtn.addEventListener('click', () => {
         showMoreImages();
@@ -143,12 +155,6 @@ function loadGalleryImages() {
       });
     }
   }
-
-  // Show initial set of images
-  showMoreImages();
-
-  // Initialize modal functionality
-  initializeModal();
 }
 
 // Function to initialize modal functionality
@@ -159,7 +165,7 @@ function initializeModal() {
   const galleryItems = document.querySelectorAll('.gallery-item');
 
   galleryItems.forEach(item => {
-    item.addEventListener('click', function() {
+    item.addEventListener('click', function () {
       const imgSrc = this.querySelector('img').src;
       modalImg.src = imgSrc;
       modal.classList.add('active');
@@ -167,12 +173,12 @@ function initializeModal() {
     });
   });
 
-  closeBtn.addEventListener('click', function() {
+  closeBtn.addEventListener('click', function () {
     modal.classList.remove('active');
     document.body.style.overflow = '';
   });
 
-  modal.addEventListener('click', function(e) {
+  modal.addEventListener('click', function (e) {
     if (e.target === modal) {
       modal.classList.remove('active');
       document.body.style.overflow = '';
@@ -180,5 +186,5 @@ function initializeModal() {
   });
 }
 
-// Load images when the page loads
+// Load gallery when DOM is ready
 document.addEventListener('DOMContentLoaded', loadGalleryImages);
