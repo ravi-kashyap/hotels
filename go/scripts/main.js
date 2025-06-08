@@ -2175,15 +2175,39 @@ $(document).ready(function () {
   // =========================================
 
   // Start Rellax
-  var rellax = new Rellax('.rellax');
-  $(window).on('resize', function () {
-    if ($(window).width() > 960) {
-      rellax.destroy();
-    } else {
-      var rellax = new Rellax('.rellax');
-    }
-  });
+  // var rellax = new Rellax('.rellax');
+  // $(window).on('resize', function () {
+  //   if ($(window).width() > 960) {
+  //     rellax.destroy();
+  //   } else {
+  //     var rellax = new Rellax('.rellax');
+  //   }
+  // });
+  let rellax = null;
 
+  function initRellax() {
+    // Destroy previous instance if any
+    if (rellax && typeof rellax.destroy === 'function') {
+      rellax.destroy();
+    }
+  
+    // Re-initialize if window width is <= 960px
+    if (window.innerWidth <= 960) {
+      const elements = document.querySelectorAll('.rellax');
+      if (elements.length > 0) {
+        rellax = new Rellax('.rellax');
+      }
+    }
+  }
+  
+  // Initial call
+  initRellax();
+  
+  // Handle window resize
+  $(window).on('resize', function () {
+    initRellax();
+  });
+  
   // =========================================
   //  *** best price calander ***
   // =========================================
