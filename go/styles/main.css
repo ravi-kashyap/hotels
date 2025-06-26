@@ -14611,6 +14611,7 @@ select {
 
 .select-wrapper {
   position: relative;
+  
 }
 
 .select-wrapper.valid + label,
@@ -18940,7 +18941,7 @@ button:hover, button:focus {
   color: #FFF;
   display: inline-block;
   zoom: 1;
-  *display: inline;
+  display: inline;
   margin: 5px;
   padding: 3px 10px;
   font-size: 12px;
@@ -18961,7 +18962,7 @@ button:hover, button:focus {
 .owl-theme .owl-controls .owl-page {
   display: inline-block;
   zoom: 1;
-  *display: inline;
+  display: inline;
 }
 
 .owl-theme .owl-controls .owl-page span {
@@ -38487,7 +38488,7 @@ a.bx--navigation-link:focus {
   font-weight: 800;
   color: #252941;
   text-transform: capitalize;
-  margin-top: 0px;
+  margin-top: 4px;
   position: relative;
   z-index: 10;
   display: block;
@@ -47841,6 +47842,7 @@ nav.menu-hamburger .menu-wraper .menu-column.menucart-wrap .menu-column {
   letter-spacing: 1px;
   font-size: 15px;
   width: 100%;
+  margin: 0 85px 0 0;
 }
 
 .home .formbox .pnl-body form .form-field:after,
@@ -58546,7 +58548,7 @@ body.hotelbooking footer .bottom-right .shapes3 {
 
 .hotelndeal {
   padding-top: 40px;
-  background-color: #ffffff  /* #ebebeb; */
+  background-color: #ffffff;  /* #ebebeb; */
   position: relative;
 }
 
@@ -58597,6 +58599,7 @@ body.hotelbooking footer .bottom-right .shapes3 {
 @media (max-width: 1440px) {
   .hotelndeal header h4 {
     margin-bottom: 15px;
+    line-height: 1.1;
   }
 }
 
@@ -75753,3 +75756,57 @@ body.about-page .cmn-header .hdr-rght:before {
     width: auto;
   }
 }
+
+  /* Hamburger menu: hide by default, show on toggle */
+  nav.menu-hamburger {
+    display: none;
+  }
+
+  #menu-toggle-input:checked~nav.menu-hamburger {
+    display: flex !important;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 600px) {
+    .fixedbanner-area .container-fluid {
+      margin-top: 32px !important;
+      /* Margin for mobile */
+    }
+  }
+
+  .contact-us-btn {
+    background-color: #61a8ee;
+    color: white !important;
+    padding: 8px 16px !important;
+    border-radius: 25px;
+    margin-top: 10px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    list-style: none;
+  }
+
+  .contact-us-btn:hover {
+    background-color: #f68e06;
+    text-decoration: none;
+  }
+
+  .list li:last-child {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .list li:last-child::before {
+    display: none;
+  }
+
+  @media (max-width: 600px) {
+    .contact-us-btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+
+

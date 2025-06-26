@@ -176,7 +176,7 @@
       background: #fff;
       border-radius: 12px;
       padding: 32px 24px 24px 24px;
-      max-width: 600px;
+      max-width: 1200px;
       width: 95vw;
       max-height: 90vh;
       overflow-y: auto;
@@ -232,6 +232,39 @@
         /* Margin for mobile */
       }
     }
+
+    .contact-us-btn {
+      background-color: #61a8ee;
+      color: white !important;
+      padding: 8px 16px !important;
+      border-radius: 25px;
+      margin-top: 10px;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      list-style: none;
+    }
+
+    .contact-us-btn:hover {
+      background-color: #f68e06;
+      text-decoration: none;
+    }
+
+    .list li:last-child {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .list li:last-child::before {
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      .contact-us-btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
   </style>
 
 
@@ -269,12 +302,16 @@
                   <a href="index.html"> <span class="gt-Menu-dot-icon"></span> The Valley Nest</a>
                 </div>
                 <ul class="list">
-                  <li><a href="index.html" class="nav-link">home</a></li>
+                  <li><a href="index.html" class="nav-link">Home</a></li>
+                  <li><a href="gallery.html" class="nav-link">Gallery</a></li>
                   <li><a href="#hotelbooking" class="nav-link">Hotel booking</a></li>
                   <li><a href="#cabbooking" class="nav-link">Cab Booking</a></li>
-                  <li><a href="#trainbooking" class="nav-link">Rent a Bike</a></li>
+                  <li><a href="#trainbooking" class="nav-link">Rent a bike</a></li>
                   <li><a href="#tour-enquiry" class="nav-link">Plan your experience</a></li>
-                  <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                  <li><a href="#" class="contact-us-btn"
+                      onclick="window.open('https://wa.me/917737486334?text=Hello! How may I help you today?', '_blank'); return false;">Contact
+                      Us</a></li>
+
                 </ul>
               </div>
             </div>
@@ -342,8 +379,8 @@
     <div class="container-fluid">
       <div class="ctrl-wraper2">
         <header>
-          <h4>Trust us, we've found</h4>
-          <span>what's best for you. Have a look!</span>
+          <h4>We've handpicked the best options so you can trust you're in good hands.</h4>
+         
         </header>
 
         <div class="src-grid">
@@ -360,7 +397,7 @@
                     greenery, Cave Canvas offers a peaceful escape with cozy interiors and nature at your doorstep.</p>
                   <!-- <a href="#" class="read-more">Read More</a> -->
                 </div>
-                <span class="gt-star htlclass">4</span>
+                <span class="gt-star htlclass ">5</span>
                 <!-- <div class="review">
                   <i class="gt-heart rtng6"></i>6 Ratings <span> (1250 Reviews) </span>
                 </div> -->
@@ -436,7 +473,7 @@
                     those who love eco-living. A peaceful retreat just minutes from local attractions.</p>
                   <!-- <a href="#" class="read-more">Read More</a> -->
                 </div>
-                <span class="gt-star htlclass">4</span>
+                <span class="gt-star htlclass">5</span>
                 <!-- <div class="review">
                   <i class="gt-heart rtng6"></i>6 Ratings <span> (1250 Reviews) </span>
                 </div> -->
@@ -474,7 +511,7 @@
                     elegance with nature. Wake up to sunlight and panoramic views of the Aravalli hills.</p>
                   <!-- <a href="#" class="read-more">Read More</a> -->
                 </div>
-                <span class="gt-star htlclass">4</span>
+                <span class="gt-star htlclass">5</span>
                 <!-- <div class="review">
                   <i class="gt-heart rtng6"></i>6 Ratings <span> (1250 Reviews) </span>
                 </div> -->
@@ -558,6 +595,76 @@
     </div>
   </div>
 
+  <!-- Hotel Booking Modal -->
+  <div id="hotel-booking-modal" class="hotel-photos-modal" style="display:none;">
+    <div class="modal-content">
+      <span class="close-booking-modal"
+        style="font-size:2rem;cursor:pointer;position:absolute;top:10px;right:20px;z-index:10;">&times;</span>
+      <h2 id="booking-modal-hotel-title">Hotel Booking Enquiry</h2>
+      <div class="formbox">
+        <div class="pnl-body">
+          <form id="hotel-booking-form">
+            <input type="hidden" id="booking-hotel-name" value="">
+            <div class="form-field icon-passenger srcby-counter">
+              <label>Full Name</label>
+              <input type="text" id="booking-name" class="inputype1" placeholder="Enter your name" required>
+            </div>
+
+            <div data-date-picker data-date-picker-type="single"
+              class="form-field icon-calendar bx--date-picker bx--date-picker--single">
+              <svg data-date-picker-icon class="bx--date-picker__icon"></svg>
+              <label>Check-in Date</label>
+              <input type="text" id="booking-checkin-date" class="inputype1 bx--date-picker__input"
+                pattern="\d{1,2}/\d{1,2}/\d{4}" placeholder="mm/dd/yyyy" data-date-picker-input required>
+            </div>
+
+            <div data-date-picker data-date-picker-type="single"
+              class="form-field icon-calendar bx--date-picker bx--date-picker--single">
+              <svg data-date-picker-icon class="bx--date-picker__icon"></svg>
+              <label>Check-out Date</label>
+              <input type="text" id="booking-checkout-date" class="inputype1 bx--date-picker__input"
+                pattern="\d{1,2}/\d{1,2}/\d{4}" placeholder="mm/dd/yyyy" data-date-picker-input required>
+            </div>
+
+            <div class="form-field icon-passenger srcby-counter">
+              <label>Number of People</label>
+              <input type="number" id="booking-people" class="inputype1" placeholder="e.g., 2" min="1" required>
+            </div>
+
+            <div class="form-field icon-passenger srcby-counter">
+              <label>Contact Number </label>
+              <div style="display: flex; gap: 8px; align-items: center;">
+                <div style="width: 35px !important; padding-bottom: 10px !important;">
+                  <select id="booking-country-code" class="inputype1 country-code-select" style="max-width: 90px;">
+                    <option value="+91" selected>+91</option>
+                    <option value="+1">+1</option>
+                    <option value="+44">+44</option>
+                    <option value="+61">+61</option>
+                    <option value="+971">+971</option>
+                    <option value="+880">+880</option>
+                    <option value="+92">+92</option>
+                    <option value="+977">+977</option>
+                    <option value="+94">+94</option>
+                    <option value="+86">+86</option>
+                    <option value="+81">+81</option>
+                  </select>
+                </div> 
+                <div>
+                  <input type="text" id="booking-phone" class="inputype1 phone-input" placeholder="Contact Number"
+                    maxlength="15" pattern="[0-9]+" required>
+                </div>
+              </div>
+            </div>
+
+            <div class="btn-group">
+              <button type="submit" class="btn btn-trpsrc">Submit Enquiry</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Tour & Travel Section -->
   <div class="tour-travel-section">
     <div class="container-fluid">
@@ -575,7 +682,7 @@
       <div class="ctrl-wraper2">
         <span class="animated-gt-cab section-icon rellax" data-rellax-speed="2" data-rellax-percentage="0.6"></span>
 
-        <img class="secmain-img rellax" data-rellax-speed="1" data-rellax-percentage="1.5" src="images/home-cab.png"
+        <img class="secmain-img rellax" data-rellax-speed="1" data-rellax-percentage="1.5" src="images/taxi.png"
           alt="Car" />
 
         <div class="ctrl-inner-wraper">
@@ -633,18 +740,38 @@
 
                 <div class="form-field icon-location srcby-counter">
                   <label>Pick up Location </label>
-                  <input type="text" class="inputype1" placeholder="Your Pick up location">
+                  <input type="text" class="inputype1" placeholder="Pick up Location">
                 </div>
 
 
                 <div class="form-field icon-location srcby-counter">
                   <label>Drop Location </label>
-                  <input type="text" class="inputype1" placeholder="Your Drop Locaiton">
+                  <input type="text" class="inputype1" placeholder="Drop Location">
                 </div>
 
                 <div class="form-field icon-passenger srcby-counter">
                   <label>Contact Number </label>
-                  <input type="text" class="inputype1" placeholder="Contact Number">
+                  <div style="display: flex; gap: 8px; align-items: center;">
+                    <div style="width: 35px !important; padding-bottom: 10px !important;">
+                      <select class="inputype1 country-code-select" style="max-width: 90px;">
+                        <option value="+91" selected>+91</option>
+                        <option value="+1">+1</option>
+                        <option value="+44">+44</option>
+                        <option value="+61">+61</option>
+                        <option value="+971">+971</option>
+                        <option value="+880">+880</option>
+                        <option value="+92">+92</option>
+                        <option value="+977">+977</option>
+                        <option value="+94">+94</option>
+                        <option value="+86">+86</option>
+                        <option value="+81">+81</option>
+                        <!-- Add more as needed -->
+                      </select>
+                    </div>
+                    <div>
+                      <input type="text" class="inputype1 phone-input" placeholder="Contact Number" maxlength="15" pattern="[0-9]+">
+                    </div>
+                  </div>
                 </div>
 
                 <div class="btn-group">
@@ -669,7 +796,7 @@
       <div class="ctrl-wraper2">
         <span class="animated-gt-train section-icon rellax" data-rellax-speed="2" data-rellax-percentage="0.1"></span>
 
-        <img class="secmain-img rellax" data-rellax-speed="3" data-rellax-percentage=".9" src="images/bike_image.jpg"
+        <img class="secmain-img rellax" data-rellax-speed="3" data-rellax-percentage=".9" src="images/bike.png"
           alt="Bike" />
         <!-- <span class="animatiomn-train"><img src="./images/train-anim/" /></span> -->
 
@@ -761,7 +888,7 @@
 
 
 
-                <div class="form-field icon-location srcby-counter">
+                <div class="form-field icon-calendar srcby-counter">
                   <label>NUmber of days</label>
                   <input type="text" class="inputype1" placeholder="days">
                 </div>
@@ -779,7 +906,27 @@
 
                 <div class="form-field icon-passenger srcby-counter">
                   <label>Contact Number </label>
-                  <input type="text" class="inputype1" placeholder="Contact Number">
+                  <div style="display: flex; gap: 8px; align-items: center;">
+                    <div style="width: 35px !important; padding-bottom: 10px !important;">
+                      <select class="inputype1 country-code-select" style="max-width: 90px;">
+                        <option value="+91" selected>+91</option>
+                        <option value="+1">+1</option>
+                        <option value="+44">+44</option>
+                        <option value="+61">+61</option>
+                        <option value="+971">+971</option>
+                        <option value="+880">+880</option>
+                        <option value="+92">+92</option>
+                        <option value="+977">+977</option>
+                        <option value="+94">+94</option>
+                        <option value="+86">+86</option>
+                        <option value="+81">+81</option>
+                        <!-- Add more as needed -->
+                      </select>
+                    </div>
+                    <div>
+                      <input type="text" class="inputype1 phone-input" placeholder="Contact Number" maxlength="15" pattern="[0-9]+">
+                    </div>
+                  </div>
                 </div>
 
                 <div class="btn-group">
@@ -801,13 +948,13 @@
     <div class="container-fluid">
       <div class="ctrl-wraper2"
         style="display: flex; justify-content: center; align-items: center; flex-direction: column; ">
-        <h1 style="font-weight: 800;" class="sec-heading" data-os-animation="fadeInUp" data-os-animation-delay="1.5s">
+        <h1 style="font-weight: 800; z-index: 111;" class="sec-heading" data-os-animation="fadeInUp" data-os-animation-delay="1.5s">
           Plan your experience</h1>
-        <div class="formbox"> 
+        <div class="formbox">
           <div class="pnl-body">
             <form>
-              <div class="form-field icon-location srcby-counter ">
-                <label>Name</label>
+              <div class="form-field icon-passenger srcby-counter ">
+                <label>Full Name</label>
                 <input type="text" class="inputype1" placeholder="Enter your name">
               </div>
 
@@ -819,6 +966,21 @@
                   <option value="Local Tours">Local Tours</option>
                   <option value="Temple Visits">Temple Visits</option>
                   <option value="Taxi">Taxi</option>
+                  <option value="Art & Design">Art & Design</option>
+                  <option value="Fitness & Wellness">Fitness & Wellness</option>
+                  <option value="Food & Drinks">Food & Drinks</option>
+                  <option value="History & Culture">History & Culture</option>
+                  <option value="Nature & Outdoor">Nature & Outdoor</option>
+                  <option value="Massage">Massage</option>
+                  <option value="Nails">Nails</option>
+                  <option value="Personal Training">Personal Training</option>
+                  <option value="Photography">Photography</option>
+                  <option value="Prepared Meals">Prepared Meals</option>
+                  <option value="Spa Treatment">Spa Treatment</option>
+                  <option value="Catering">Catering</option>
+                  <option value="Chef">Chef</option>
+                  <option value="Hairstyling">Hairstyling</option>
+                  <option value="Makeup">Makeup</option>
                   <option value="Other">Other</option>
                 </select>
               </div>
@@ -836,7 +998,28 @@
 
               <div class="form-field icon-passenger srcby-counter ">
                 <label>Contact Number</label>
-                <input type="text" class="inputype1" placeholder="Enter your contact number">
+                <div style="display: flex; gap: 8px; align-items: center;">
+                  <div style="width: 35px !important; padding-bottom: 10px !important;">
+                    <select class="inputype1 country-code-select" style="max-width: 90px;">
+                      <option value="+91" selected>+91</option>
+                      <option value="+1">+1</option>
+                      <option value="+44">+44</option>
+                      <option value="+61">+61</option>
+                      <option value="+971">+971</option>
+                      <option value="+880">+880</option>
+                      <option value="+92">+92</option>
+                      <option value="+977">+977</option>
+                      <option value="+94">+94</option>
+                      <option value="+86">+86</option>
+                      <option value="+81">+81</option>
+                      <!-- Add more as needed -->
+                    </select>
+                  </div>
+                  <div>
+                    <input type="text" class="inputype1 phone-input" placeholder="Contact Number"
+                      maxlength="15" pattern="[0-9]+">
+                  </div>
+                </div>
               </div>
 
               <div class="btn-group">
@@ -877,8 +1060,8 @@
                   <p>Ajay's place is a perfect escape. Surrounded by stunning rock formations, lush greenery, and the
                     soothing sounds of birds and monkeys, it offers a truly unique experience. The cozy rooms are
                     comfortable, and the views are breathtaking. I wish I could have stayed an extra day, but it wasn't
-                    available. A must-visit for nature lovers.</p>
-                  <span class="rating"><img src="images/star.png" alt="img" />4.5 / 5</span>
+                    available. A must-visit for nature lovers.</p>
+                  <span class="rating"><img src="images/star5.png" alt="img" />5 / 5</span>
                 </div>
               </div>
               <div class="csreview-item">
@@ -889,8 +1072,8 @@
                   <strong>Shivam, Nashik, India</strong>
                   <p>So far i have booked many bnb's and stayed at various luxury properties but this was something
                     else, the serene beauty around and the uniquely designed rooms took my heart. The staff was so
-                    polite and helpful that we felt at home. A must stay when in Mount Abu</p>
-                  <span class="rating"><img src="images/star.png" alt="img" />4.5 / 5</span>
+                    polite and helpful that we felt at home. A must stay when in Mount Abu</p>
+                  <span class="rating"><img src="images/star5.png" alt="img" />5 / 5</span>
                 </div>
               </div>
               <div class="csreview-item">
@@ -901,8 +1084,8 @@
                   <strong>Ritika</strong>
                   <p>Had a peaceful and refreshing stay surrounded by nature. Pratap Ram was a fantastic host-very
                     welcoming and responsive throughout. The property is beautiful and tranquil, just needs a little
-                    more attention to cleaning and upkeep. Overall, a great spot for a relaxing getaway</p>
-                  <span class="rating"><img src="images/star.png" alt="img" />4.5 / 5</span>
+                    more attention to cleaning and upkeep. Overall, a great spot for a relaxing getaway</p>
+                  <span class="rating"><img src="images/star5.png" alt="img" />5 / 5</span>
                 </div>
               </div>
               <div class="csreview-item">
@@ -913,8 +1096,8 @@
                   <strong>Ashish, Bhopal, India</strong>
                   <p>The room is very clean and aesthetic, Cob House is very romantic and cozy place with beautiful
                     view. Staff is very good, their behaviour is very polite and professional. I would like to specially
-                    thank - Pratap Ram ji, Devanshu and team for the hospitality.</p>
-                  <span class="rating"><img src="images/star.png" alt="img" />4.5 / 5</span>
+                    thank - Pratap Ram ji, Devanshu and team for the hospitality.</p>
+                  <span class="rating"><img src="images/star.png" alt="img" />4 / 5</span>
                 </div>
               </div>
               <div class="csreview-item">
@@ -925,8 +1108,8 @@
                   <strong>Kartikey, Pune, India</strong>
                   <p>Everything which is listed, you will get it there guaranteed. Also, one thing which I would like to
                     mention is that their FOOD IS AWESOME. It is affordable, they have a great deal of variety, flexible
-                    with time and the taste is just how one wants.</p>
-                  <span class="rating"><img src="images/star.png" alt="img" />4.5 / 5</span>
+                    with time and the taste is just how one wants.</p>
+                  <span class="rating"><img src="images/star.png" alt="img" />4 / 5</span>
                 </div>
               </div>
             </div>
@@ -936,11 +1119,11 @@
             <h5 class="ftr-headng">menu</h5>
             <ul>
               <li><a href="index.html">Home</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
               <li><a href="#hotelbooking">Hotel</a></li>
               <li><a href="#cabbooking">taxi booking</a></li>
               <li><a href="#trainbooking">Rent a bike</a></li>
               <li><a href="#tour-enquiry">Plan your experience</a></li>
-              <li><a href="gallery.html">Gallery</a></li>
             </ul>
 
             <!-- <a class="cart-box" href="#"><span class="gt-shopping-bag cart-icon"></span>item in your cart</a> -->
@@ -1190,38 +1373,7 @@
 
        
   <!-- Start of Async Drift Code -->
-  <script>
-    "use strict";
 
-    ! function () {
-      var t = window.driftt = window.drift = window.driftt || [];
-      if (!t.init) {
-        if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
-        t.invoked = !0, t.methods = ["identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide",
-          "off", "on"
-        ],
-          t.factory = function (e) {
-            return function () {
-              var n = Array.prototype.slice.call(arguments);
-              return n.unshift(e), t.push(n), t;
-            };
-          }, t.methods.forEach(function (e) {
-            t[e] = t.factory(e);
-          }), t.load = function (t) {
-            var e = 3e5,
-              n = Math.ceil(new Date() / e) * e,
-              o = document.createElement("script");
-            o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src =
-              "https://js.driftt.com/include/" + n + "/" + t + ".js";
-            var i = document.getElementsByTagName("script")[0];
-            i.parentNode.insertBefore(o, i);
-          };
-      }
-    }();
-    drift.SNIPPET_VERSION = '0.3.1';
-    drift.load('p6rs6yxhpmn6');
-
-  </script>
   <!-- End of Async Drift Code -->
 
   <!-- Hotjar Tracking Code for http://html.0effortthemes.com/go/ -->
@@ -1251,23 +1403,50 @@
         msg = '*Cab Enquiry Booking*%0A';
         msg += 'Name: ' + form.querySelector('input[placeholder="Enter your name"]').value + '%0A';
         msg += 'Departure: ' + form.querySelector('input[placeholder="mm/dd/yyyy"]').value + '%0A';
-        msg += 'Pick up Location: ' + form.querySelector('input[placeholder="Your Pick up location"]').value + '%0A';
-        msg += 'Drop Location: ' + form.querySelector('input[placeholder="Your Drop Locaiton"]').value + '%0A';
-        msg += 'Contact Number: ' + form.querySelector('input[placeholder="Contact Number"]').value;
+        msg += 'Pick up Location: ' + form.querySelector('input[placeholder="Pick up Location"]').value + '%0A';
+        msg += 'Drop Location: ' + form.querySelector('input[placeholder="Drop Location"]').value + '%0A';
+        var countryCode = form.querySelector('.country-code-select') ? form.querySelector('.country-code-select').value : '';
+        var phoneInput = form.querySelector('.phone-input') ? form.querySelector('.phone-input').value.trim() : '';
+        msg += 'Contact Number: ' + countryCode + ' ' + phoneInput;
       } else if (type === 'train') {
         msg = '*Rent A Bike  Enquiry*%0A';
         msg += 'Name: ' + form.querySelector('input[placeholder="Enter your name"]').value + '%0A';
         msg += 'Date: ' + form.querySelector('input[placeholder="mm/dd/yyyy"]').value + '%0A';
         msg += 'Days: ' + form.querySelector('input[placeholder="days"]').value + '%0A';
-        // msg += 'To: ' + form.querySelector('input[placeholder="To"]').value + '%0A';
-        // msg += 'Number of Passengers: ' + form.querySelector('input[placeholder="Total passengers "]').value + '%0A';
-        msg += 'Contact Number: ' + form.querySelector('input[placeholder="Contact Number"]').value;
+        var countryCode = form.querySelector('.country-code-select') ? form.querySelector('.country-code-select').value : '';
+        var phoneInput = form.querySelector('.phone-input') ? form.querySelector('.phone-input').value.trim() : '';
+        msg += 'Contact Number: ' + countryCode + ' ' + phoneInput;
       } else if (type === 'tour') {
         msg = '*Tour Enquiry Booking*%0A';
         msg += 'Name: ' + form.querySelector('input[placeholder="Enter your name"]').value + '%0A';
         msg += 'Service Interested In: ' + form.querySelector('select').value + '%0A';
         msg += 'Return: ' + form.querySelector('input[placeholder="mm/dd/yyyy"]').value + '%0A';
-        msg += 'Contact Number: ' + form.querySelector('input[placeholder="Enter your contact number"]').value;
+        // --- Country code and phone validation for tour form ---
+        var countryCode = form.querySelector('.country-code-select') ? form.querySelector('.country-code-select').value : '';
+        var phoneInput = form.querySelector('.phone-input') ? form.querySelector('.phone-input').value.trim() : '';
+        // Validate phone number: not empty, numeric, 7-15 digits
+        var phoneValid = /^\d{7,15}$/.test(phoneInput);
+        if (!phoneValid) {
+          alert('Please enter a valid contact number (7-15 digits, numbers only).');
+          return;
+        }
+        msg += 'Contact Number: ' + countryCode + ' ' + phoneInput;
+      } else if (type === 'hotel') {
+        msg = '*Hotel Booking Enquiry*%0A';
+        msg += 'Hotel: ' + form.querySelector('#booking-hotel-name').value.trim() + '%0A';
+        msg += 'Name: ' + form.querySelector('#booking-name').value.trim() + '%0A';
+        msg += 'Check-in: ' + form.querySelector('#booking-checkin-date').value.trim() + '%0A';
+        msg += 'Check-out: ' + form.querySelector('#booking-checkout-date').value.trim() + '%0A';
+        msg += 'Number of People: ' + form.querySelector('#booking-people').value.trim() + '%0A';
+
+        var countryCode = form.querySelector('#booking-country-code') ? form.querySelector('#booking-country-code').value : '';
+        var phoneInput = form.querySelector('#booking-phone') ? form.querySelector('#booking-phone').value.trim() : '';
+        var phoneValid = /^\d{7,15}$/.test(phoneInput);
+        if (!phoneInput || !phoneValid) {
+          alert('Please enter a valid contact number (7-15 digits, numbers only).');
+          return;
+        }
+        msg += 'Contact Number: ' + countryCode + ' ' + phoneInput;
       }
       window.open('https://wa.me/917737486334?text=' + msg, '_blank');
     }
@@ -1322,11 +1501,45 @@
       document.querySelectorAll('.btn-book').forEach(function (btn) {
         btn.addEventListener('click', function (e) {
           e.preventDefault();
-          var venue = btn.closest('.venue-dtls');
-          var hotelName = venue ? venue.querySelector('h3').textContent.trim() : '';
-          var msg = '*Hotel Booking Enquiry*%0AHotel: ' + hotelName + '%0AHi, I am interested in booking this hotel.';
-          window.open('https://wa.me/917737486334?text=' + msg, '_blank');
+          const venue = btn.closest('.venue-dtls');
+          const hotelName = venue ? venue.querySelector('h3').textContent.trim() : '';
+          openBookingModal(hotelName);
         });
+      });
+
+      // Hotel Booking Modal Logic
+      const bookingModal = document.getElementById('hotel-booking-modal');
+      const bookingForm = document.getElementById('hotel-booking-form');
+      const closeBookingBtn = document.querySelector('.close-booking-modal');
+
+      function openBookingModal(hotelName) {
+        document.getElementById('booking-modal-hotel-title').textContent = `Enquiry for ${hotelName}`;
+        document.getElementById('booking-hotel-name').value = hotelName;
+        bookingModal.style.display = 'flex';
+      }
+
+      function closeBookingModal() {
+        bookingModal.style.display = 'none';
+        bookingForm.reset();
+      }
+
+      closeBookingBtn.addEventListener('click', closeBookingModal);
+
+      bookingModal.addEventListener('click', function (e) {
+        if (e.target === bookingModal) {
+          closeBookingModal();
+        }
+      });
+
+      bookingForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (bookingForm.checkValidity()) {
+          sendWhatsAppMessage('hotel', bookingForm);
+          closeBookingModal();
+        } else {
+          // Trigger browser validation UI
+          bookingForm.reportValidity();
+        }
       });
     });
   </script>
